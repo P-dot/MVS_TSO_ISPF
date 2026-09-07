@@ -1,0 +1,45 @@
+Lab 01 — TSO/E Logon, Native READY Mode and ISPF Environment
+==============================================================
+
+ADCD/session-manager command:
+
+L TSO
+
+TSO/E LOGON panel observations:
+
+Userid    ===> IBMUSER
+Procedure ===> DBSPROC9
+Command   ===> ispf
+
+ISPF Primary Option Menu:
+
+6
+
+ISPF Command Shell:
+
+PROFILE
+
+Return to Primary Option Menu and terminate ISPF:
+
+=X
+
+When the ISPF log data set disposition panel appears:
+
+Press ENTER to accept/process the selected disposition.
+
+Native TSO READY prompt:
+
+PROFILE
+
+Terminate the TSO/E session:
+
+LOGOFF
+
+Expected key validation points:
+
+- ISPF Primary Option Menu is reached.
+- PROFILE inside ISPF includes PREFIX(IBMUSER).
+- =X terminates ISPF.
+- READY appears after ISPF termination.
+- PROFILE at READY again includes PREFIX(IBMUSER).
+- LOGOFF ends TSO/E and returns to the session manager.
