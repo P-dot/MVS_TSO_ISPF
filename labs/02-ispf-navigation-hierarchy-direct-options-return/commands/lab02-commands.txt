@@ -1,0 +1,34 @@
+Lab 02 — ISPF Navigation, Hierarchy, Direct Options and RETURN
+
+Interactive sequence used:
+
+1. From ISPF Primary Option Menu:
+   3
+
+2. From Utility Selection Panel:
+   4
+
+3. From Data Set List Utility:
+   F3
+   (PF3 / END behavior)
+
+4. From ISPF Primary Option Menu:
+   3.4
+
+5. Return to Primary Option Menu and open Edit:
+   2
+
+6. From Edit Entry Panel:
+   =3.4
+
+7. From Data Set List Utility:
+   RETURN
+
+Verified behavior:
+
+3       -> Utilities
+4       -> Dslist from Utilities
+3.4     -> direct path to Dslist
+=3.4    -> jump to Dslist from another ISPF function
+F3/END  -> return one level
+RETURN  -> return to ISPF Primary Option Menu

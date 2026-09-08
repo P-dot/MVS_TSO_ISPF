@@ -16,6 +16,14 @@ The project uses documentation as the primary learning source; no video course i
 - IBM Redbooks, *Introduction to the New Mainframe: z/OS Basics*, SG24-6366-00.
 - IBM Redbooks, *z/OS Version 1 Release 11 Implementation*, SG24-7729-00.
 
+## Lab 02 source mapping
+
+Lab 02 is based mainly on:
+
+- Bosler, Chapter 4, *Accessing ISPF*: ISPF hierarchy, option/suboption selection, direct option entry, jump function and RETURN/END navigation concepts.
+- Lanz, Volume 1, Chapter 4, *Customize ISPF*: Primary Option Menu and practical handling of ISPF panels.
+- IBM Redbooks, *Introduction to the New Mainframe: z/OS Basics*: practical use of direct ISPF paths such as `=3.4`.
+
 Other IBM manuals are added only when a lab requires them (JCL, REXX, VSAM, RACF, USS, and related components).
 
 The source publications themselves are **not redistributed in this repository**.

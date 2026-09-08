@@ -9,6 +9,7 @@ The lab sequence is documentation-led. The main historical/didactic source is Ku
 | Lab | Topic | Status |
 |---|---|---|
 | [01](labs/01-tso-e-logon-ready-ispf-environment/) | TSO/E logon, native READY mode and ISPF environment | ✅ Completed |
+| [02](labs/02-ispf-navigation-hierarchy-direct-options-return/) | ISPF hierarchy, direct option entry, jump function and RETURN | ✅ Completed |
 
 ## Method
 
@@ -18,7 +19,7 @@ Each lab records the objective, concepts, exact interactive flow, commands, obse
 
 - IBM z/OS 1.11 ADCD
 - TSO/E
-- ISPF 6.1 (observed in the lab)
+- ISPF 6.1 (observed in the labs)
 - 3270/TN3270 interactive access
 
 ## Publication security
