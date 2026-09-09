@@ -24,6 +24,14 @@ Lab 02 is based mainly on:
 - Lanz, Volume 1, Chapter 4, *Customize ISPF*: Primary Option Menu and practical handling of ISPF panels.
 - IBM Redbooks, *Introduction to the New Mainframe: z/OS Basics*: practical use of direct ISPF paths such as `=3.4`.
 
+## Lab 03 source mapping
+
+Lab 03 is based mainly on:
+
+- Bosler, Chapter 4, *Accessing ISPF*: split-screen operation and navigation between ISPF contexts.
+- Lanz, Volume 1, section 4.7, *Screen splitting*, including logical-screen handling and direct activation concepts.
+- IBM ISPF behavior validated directly in the z/OS 1.11 lab through `F2/SPLIT`, `F9/SWAP`, `SWAP LIST` and `F3/END`.
+
 Other IBM manuals are added only when a lab requires them (JCL, REXX, VSAM, RACF, USS, and related components).
 
 The source publications themselves are **not redistributed in this repository**.

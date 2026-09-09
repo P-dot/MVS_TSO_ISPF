@@ -1,0 +1,35 @@
+Lab 03 — ISPF Split Screen, SWAP and Logical Screens
+
+Interactive operations validated in the lab:
+
+F2
+  -> SPLIT / create an additional logical-screen context
+
+2
+  -> Open Edit on one logical screen
+
+F9
+  -> SWAP to the other logical screen
+
+3
+  -> Open Utilities on the other logical screen
+
+F9
+  -> SWAP between logical screens and verify preserved state
+
+SWAP LIST
+  -> Display ISPF Task List
+  -> Validate two active logical screens (UTIL and EDIT)
+
+RETURN / F3
+  -> Return/end functions as required
+  -> End one logical-screen context
+
+SWAP LIST
+  -> Final validation
+  -> One active logical screen remains
+
+Observed task-list identifiers:
+
+UTIL   ISRUTIL    ISR   3270
+EDIT   ISREDM01   ISR   3270

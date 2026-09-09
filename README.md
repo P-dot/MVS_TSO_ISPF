@@ -10,6 +10,7 @@ The lab sequence is documentation-led. The main historical/didactic source is Ku
 |---|---|---|
 | [01](labs/01-tso-e-logon-ready-ispf-environment/) | TSO/E logon, native READY mode and ISPF environment | ✅ Completed |
 | [02](labs/02-ispf-navigation-hierarchy-direct-options-return/) | ISPF hierarchy, direct option entry, jump function and RETURN | ✅ Completed |
+| [03](labs/03-ispf-split-screen-swap-logical-screens/) | ISPF logical screens, SPLIT, SWAP and task-list validation | ✅ Completed |
 
 ## Method
 
@@ -21,6 +22,12 @@ Each lab records the objective, concepts, exact interactive flow, commands, obse
 - TSO/E
 - ISPF 6.1 (observed in the labs)
 - 3270/TN3270 interactive access
+
+## Ecosystem role
+
+This repository owns the interactive TSO/E and ISPF foundation of the wider z/OS engineering laboratory. It provides the operator-facing base later consumed by JCL, REXX, scheduler tooling and other specialized repositories.
+
+See [MVS TSO/ISPF Ecosystem Integration](docs/ECOSYSTEM-INTEGRATION.md).
 
 ## Publication security
 
