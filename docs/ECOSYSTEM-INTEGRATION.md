@@ -65,7 +65,9 @@ Relationship:
 MVS_TSO_ISPF -> JCL_LABS
 ```
 
-Status: **Foundational dependency**
+Status: **Validated interactive foundation**
+
+Lab 04 validates real partitioned-data-set discovery and member-list handling using `IBMUSER.JCL.LAB` as an ISPF object. The JCL content itself remains out of scope and continues to belong to `JCL_LABS`.
 
 ### zos-batch-scheduler
 
@@ -105,11 +107,14 @@ The repository currently produces:
 - native `READY` mode interaction;
 - validated ISPF entry and navigation;
 - direct-option and jump-navigation workflows;
-- repeatable operator navigation patterns;
+- validated logical-screen operation with SPLIT, SWAP and SWAP LIST;
+- validated DSLIST data-set discovery;
+- validated partitioned-data-set member-list processing;
+- repeatable operator navigation and selection patterns;
 - security-reviewed evidence;
 - documented interactive procedures.
 
-Future labs are expected to extend this into dataset management, editor use, utilities, command interaction and automation prerequisites.
+Future labs are expected to extend this into Browse, Edit, utilities, command interaction and automation prerequisites.
 
 ## Validated Integration Paths
 
@@ -146,6 +151,50 @@ ISPF Primary Option Menu
 ```
 
 Validated by Lab 02.
+
+### Logical-screen operator path
+
+```text
+ISPF
+ |
+ +--> logical screen 1
+ |
+ +--> logical screen 2
+        |
+        +--> SWAP / SWAP LIST
+```
+
+Validated by Lab 03.
+
+### Data set and member operator path
+
+```text
+TSO PROFILE
+      |
+      v
+PREFIX(IBMUSER)
+      |
+      v
+ISPF DSLIST
+      |
+      v
+IBMUSER data sets
+      |
+      v
+partitioned data set
+      |
+      v
+member list
+      |
+      +--> line selection
+      +--> SELECT
+      +--> LOCATE
+      +--> SORT
+      +--> RESET
+      +--> member pattern
+```
+
+Validated by Lab 04.
 
 ### REXX foundation path
 
@@ -195,6 +244,8 @@ MVS_TSO_ISPF
     JES2
 ```
 
+Lab 04 now validates the data-set/member navigation prerequisite. Editing and submission remain for later labs or the specialized batch repository.
+
 ### Scheduler operator path
 
 ```text
@@ -214,8 +265,10 @@ zos-batch-scheduler
 | 3270/TN3270 -> TSO/E | Validated | Lab 01 |
 | TSO/E -> READY -> ISPF | Validated | Lab 01 |
 | ISPF hierarchy/navigation | Validated | Lab 02 |
+| ISPF logical-screen operation | Validated | Lab 03 |
+| ISPF DSLIST -> PDS member list | Validated | Lab 04 |
 | MVS_TSO_ISPF -> REXX foundation | Validated foundation | REXX Labs 01-02 consume this environment |
-| MVS_TSO_ISPF -> JCL workflow | Foundational | Used across batch-oriented labs |
+| MVS_TSO_ISPF -> JCL workflow | Validated interactive foundation | Lab 04 uses a JCL PDS as the navigation object; JCL semantics stay in JCL_LABS |
 | REXX -> ISPF services | Planned | Future REXX/ISPF work |
 | MVS_TSO_ISPF -> scheduler operator tooling | Planned | Future integration |
 
@@ -257,10 +310,16 @@ ISPF entry
 ISPF navigation
      |
      v
+logical-screen operation
+     |
+     v
 dataset/member work
      |
      v
-editor and utilities
+Browse
+     |
+     v
+Edit and utilities
      |
      v
 REXX / ISPF automation prerequisites
@@ -269,7 +328,7 @@ REXX / ISPF automation prerequisites
 cross-repository operator workflows
 ```
 
-Near-term work should continue building a solid operator foundation before adding automation or cross-repository tooling.
+Labs 01-04 validate the path through dataset/member work. Near-term work should now continue with Browse and Edit behavior before adding automation or cross-repository tooling.
 
 ## Engineering and Publication Rules
 
@@ -296,7 +355,7 @@ Before publication:
 - preserve evidence where appropriate;
 - distinguish validated functionality from roadmap targets;
 - do not publish credentials, IP addresses, MAC addresses, terminal/network identifiers or host-side network details;
-- use short-lived integration branches and merge completed work into `main`.
+- use short-lived lab/integration branches and merge completed work into `main`.
 
 ## Master Architecture
 
