@@ -32,6 +32,15 @@ Lab 03 is based mainly on:
 - Lanz, Volume 1, section 4.7, *Screen splitting*, including logical-screen handling and direct activation concepts.
 - IBM ISPF behavior validated directly in the z/OS 1.11 lab through `F2/SPLIT`, `F9/SWAP`, `SWAP LIST` and `F3/END`.
 
+## Lab 04 source mapping
+
+Lab 04 is based mainly on:
+
+- Bosler, Chapter 5, *Specifying Data Set Names*: data set naming, qualifiers, TSO-oriented naming behavior and member notation.
+- Bosler, Chapter 6, *Member List Processing*: member-list statistics, selection, `SELECT`, `RESET`, `LOCATE`, member-name patterns and sorting.
+- Lanz, Volume 1, Chapter 2, *Technical basics*: data sets, naming conventions, qualifiers and data set types.
+- IBM z/OS/ISPF documentation and the z/OS Basics Redbook as complementary validation for DSLIST and ISPF data-set workflows.
+
 Other IBM manuals are added only when a lab requires them (JCL, REXX, VSAM, RACF, USS, and related components).
 
 The source publications themselves are **not redistributed in this repository**.

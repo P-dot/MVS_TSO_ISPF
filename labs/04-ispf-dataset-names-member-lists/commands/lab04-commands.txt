@@ -1,0 +1,56 @@
+Lab 04 — ISPF Data Set Names and Member List Processing
+
+Interactive commands and selections validated:
+
+1. ISPF option 6:
+   PROFILE
+
+Observed:
+   PREFIX(IBMUSER)
+
+2. Direct ISPF navigation:
+   =3.4
+
+3. Data Set List Utility:
+   Dsname Level = IBMUSER
+
+Observed:
+   142 matching data sets
+
+4. DSLIST line command:
+   B  IBMUSER.JCL.LAB
+
+Observed:
+   Browse member list
+   54 members
+
+5. Member-list line selection:
+   S  CALLPRC2
+
+Observed:
+   IBMUSER.JCL.LAB(CALLPRC2)
+
+6. Member-list primary command:
+   SELECT RACFDSMN
+
+Observed:
+   IBMUSER.JCL.LAB(RACFDSMN)
+
+7. Locate by prefix:
+   L RACF
+
+8. Sort member list:
+   SORT CHANGED
+   SORT SIZE
+   SORT NAME
+
+9. Clear pending line commands:
+   S  CALLPRC2
+   S  CALLPROC
+   RESET
+
+10. Member-pattern selection from View:
+   IBMUSER.JCL.LAB(L1*)
+
+Observed:
+   22 matching members
