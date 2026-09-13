@@ -9,47 +9,31 @@ The project uses documentation as the primary learning source; no video course i
 ## ISPF complementary sources
 
 - Franz Lanz, *IBM z/OS ISPF Smart Practices, Volume 1: User's Guide*, De Gruyter, 2015.
-- Franz Lanz, *IBM z/OS ISPF Smart Practices, Volume 2: ISPF Programmer's Guide*, De Gruyter, 2015. Reserved mainly for later ISPF development/REXX labs.
+- Franz Lanz, *IBM z/OS ISPF Smart Practices, Volume 2: ISPF Programmer's Guide*, De Gruyter, 2015.
 
 ## IBM complementary sources
 
 - IBM Redbooks, *Introduction to the New Mainframe: z/OS Basics*, SG24-6366-00.
 - IBM Redbooks, *z/OS Version 1 Release 11 Implementation*, SG24-7729-00.
 
-## Lab 02 source mapping
-
-Lab 02 is based mainly on:
-
-- Bosler, Chapter 4, *Accessing ISPF*: ISPF hierarchy, option/suboption selection, direct option entry, jump function and RETURN/END navigation concepts.
-- Lanz, Volume 1, Chapter 4, *Customize ISPF*: Primary Option Menu and practical handling of ISPF panels.
-- IBM Redbooks, *Introduction to the New Mainframe: z/OS Basics*: practical use of direct ISPF paths such as `=3.4`.
-
-## Lab 03 source mapping
-
-Lab 03 is based mainly on:
-
-- Bosler, Chapter 4, *Accessing ISPF*: split-screen operation and navigation between ISPF contexts.
-- Lanz, Volume 1, section 4.7, *Screen splitting*, including logical-screen handling and direct activation concepts.
-- IBM ISPF behavior validated directly in the z/OS 1.11 lab through `F2/SPLIT`, `F9/SWAP`, `SWAP LIST` and `F3/END`.
-
-## Lab 04 source mapping
-
-Lab 04 is based mainly on:
-
-- Bosler, Chapter 5, *Specifying Data Set Names*: data set naming, qualifiers, TSO-oriented naming behavior and member notation.
-- Bosler, Chapter 6, *Member List Processing*: member-list statistics, selection, `SELECT`, `RESET`, `LOCATE`, member-name patterns and sorting.
-- Lanz, Volume 1, Chapter 2, *Technical basics*: data sets, naming conventions, qualifiers and data set types.
-- IBM z/OS/ISPF documentation and the z/OS Basics Redbook as complementary validation for DSLIST and ISPF data-set workflows.
-
 ## Lab 05 source mapping
 
 Lab 05 is based mainly on:
 
-- Bosler, Chapter 7, *The Browse Function*: scrolling, terminating Browse, selecting from a member list, `LOCATE`, line-number positioning, label assignment and label location.
-- Bosler's documented Browse scroll behavior for `PAGE`, `HALF`, numeric amounts, `MAX`, `TOP`, `BOTTOM`, `UP` and `DOWN`.
+- Bosler, Chapter 7, *The Browse Function*: scrolling, terminating Browse, `LOCATE`, line-number positioning, label assignment and label location.
 - Lanz, Volume 1, as complementary context for ISPF Browse usage and data-set/member interaction.
-- The behavior of IBM z/OS 1.11 / ISPF 6.1 was validated directly in the laboratory and takes precedence over assumptions based only on historical screenshots.
 
-Other IBM manuals are added only when a lab requires them (JCL, REXX, VSAM, RACF, USS, and related components).
+## Lab 06 source mapping
+
+Lab 06 is based mainly on:
+
+- Bosler, Chapter 8, *Browse Commands*: `COLUMNS`, `RESET`, `DISPLAY`, `HEX` and Recursive Browse.
+- Bosler's documented hexadecimal display modes `HEX ON VERT`, `HEX ON DATA` and `HEX OFF`.
+- Bosler's description of Recursive Browse, where the parent Browse session is suspended while another member is browsed.
+- IBM z/OS 1.11 / ISPF 6.1 behavior as directly observed in this laboratory.
+
+The lab deliberately does not include `FIND`; Bosler treats that as a separate Browse capability in Chapter 9 and it remains the next focused lab.
+
+Other IBM manuals are added only when a lab requires them.
 
 The source publications themselves are **not redistributed in this repository**.

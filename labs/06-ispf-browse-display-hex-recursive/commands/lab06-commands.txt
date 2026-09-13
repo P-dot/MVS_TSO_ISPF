@@ -1,0 +1,69 @@
+Lab 06 — ISPF Browse Display Controls, HEX and Recursive Browse
+
+Architecture V2
+---------------
+Domain: Operations and Service Management
+Capability: ISPF Browse data representation and nested read-only inspection
+Lifecycle: Operate / Observe
+Maturity: M1 — Foundational
+Integration: I0 — Standalone
+Validation: VALIDATED
+
+Interactive sequence
+--------------------
+
+Starting Browse:
+IBMUSER.JCL.LAB(L10PREP)
+
+1. Column ruler
+   COLUMNS
+
+2. Scroll with ruler active
+   PF8 / Down
+
+3. Reset display state
+   RESET
+
+4. Carriage-control display
+   DISPLAY CC
+
+Observed:
+No meaningful visual CC difference in the selected JCL member.
+
+5. Restore no-CC presentation
+   DISPLAY NOCC
+
+6. Vertical hexadecimal display
+   HEX ON VERT
+
+7. Alternative hexadecimal display
+   HEX ON DATA
+
+8. Restore normal character display
+   HEX OFF
+
+9. Recursive Browse
+   BROWSE CALLPRC2
+
+Observed:
+BROWSE IBMUSER.JCL.LAB(CALLPRC2)
+
+10. End nested Browse
+    PF3 / END
+
+Observed:
+Return to parent Browse:
+IBMUSER.JCL.LAB(L10PREP)
+
+11. End parent Browse
+    PF3 / END
+
+Observed:
+Return to PDS member list:
+IBMUSER.JCL.LAB
+
+Persistent z/OS changes:
+NONE
+
+Batch RC:
+NOT APPLICABLE

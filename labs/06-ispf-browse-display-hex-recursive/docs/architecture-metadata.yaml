@@ -1,0 +1,48 @@
+lab:
+  historical_id: "labs/06-ispf-browse-display-hex-recursive"
+  title: "ISPF Browse Display Controls, HEX and Recursive Browse"
+  status: "VALIDATED"
+
+architecture:
+  domain: "Operations and Service Management"
+  capability: "ISPF Browse data representation and nested read-only inspection"
+  lifecycle:
+    - Operate
+    - Observe
+  maturity: "M1 — Foundational"
+  integration_level: "I0 — Standalone"
+
+relationships:
+  components:
+    - TSO/E
+    - ISPF
+    - PDS
+    - EBCDIC representation
+  repositories:
+    - MVS_TSO_ISPF
+  tags:
+    - REL-JCL
+    - REL-AUTOMATION
+
+dependencies:
+  - "D1: Lab 05 — Browse navigation and positioning"
+  - "D4: active TSO/E and ISPF environment"
+
+evidence:
+  - screenshots
+  - command-sequence
+  - hexadecimal-display
+  - nested-browse-validation
+  - publication-security-review
+
+result:
+  execution: "SUCCESS"
+  validation: "VALIDATED"
+  operational: "Advanced read-only Browse representation validated"
+  security: "APPROVED"
+  recovery: "NOT REQUIRED"
+  persistent_change: "NONE"
+  batch_rc: "NOT APPLICABLE"
+
+next_capability:
+  - "ISPF Browse FIND and RFIND"

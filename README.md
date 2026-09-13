@@ -13,10 +13,11 @@ The lab sequence is documentation-led. The main historical/didactic source is Ku
 | [03](labs/03-ispf-split-screen-swap-logical-screens/) | ISPF logical screens, SPLIT, SWAP and task-list validation | ✅ Completed |
 | [04](labs/04-ispf-dataset-names-member-lists/) | Data set naming, DSLIST and member-list processing | ✅ Completed |
 | [05](labs/05-ispf-browse-navigation-scrolling-locate-labels/) | ISPF Browse navigation, scrolling, LOCATE and labels | ✅ Completed |
+| [06](labs/06-ispf-browse-display-hex-recursive/) | ISPF Browse display controls, hexadecimal representation and recursive Browse | ✅ Completed |
 
 ## Method
 
-Each lab records the objective, architecture metadata, concepts, exact interactive flow, commands, observed results, evidence, security review and source references. Historical MVS material is validated against the behavior of the z/OS environment instead of being reproduced blindly.
+Each lab records Architecture V2 metadata, objective, engineering context, scope, exact interactive flow, commands, observed results, evidence, security review and source references.
 
 Architecture V2 classifies new work by engineering domain, capability, lifecycle stage, maturity level and integration level while preserving the historical lab sequence.
 
@@ -54,10 +55,13 @@ logical-screen operation
 dataset/member work
      |
      v
-Browse
+Browse navigation
      |
      v
-advanced Browse / Find
+Browse representation / recursive Browse
+     |
+     v
+Browse FIND / RFIND
      |
      v
 Edit and utilities
