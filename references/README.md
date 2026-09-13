@@ -41,6 +41,15 @@ Lab 04 is based mainly on:
 - Lanz, Volume 1, Chapter 2, *Technical basics*: data sets, naming conventions, qualifiers and data set types.
 - IBM z/OS/ISPF documentation and the z/OS Basics Redbook as complementary validation for DSLIST and ISPF data-set workflows.
 
+## Lab 05 source mapping
+
+Lab 05 is based mainly on:
+
+- Bosler, Chapter 7, *The Browse Function*: scrolling, terminating Browse, selecting from a member list, `LOCATE`, line-number positioning, label assignment and label location.
+- Bosler's documented Browse scroll behavior for `PAGE`, `HALF`, numeric amounts, `MAX`, `TOP`, `BOTTOM`, `UP` and `DOWN`.
+- Lanz, Volume 1, as complementary context for ISPF Browse usage and data-set/member interaction.
+- The behavior of IBM z/OS 1.11 / ISPF 6.1 was validated directly in the laboratory and takes precedence over assumptions based only on historical screenshots.
+
 Other IBM manuals are added only when a lab requires them (JCL, REXX, VSAM, RACF, USS, and related components).
 
 The source publications themselves are **not redistributed in this repository**.

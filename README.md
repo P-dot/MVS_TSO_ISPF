@@ -12,10 +12,13 @@ The lab sequence is documentation-led. The main historical/didactic source is Ku
 | [02](labs/02-ispf-navigation-hierarchy-direct-options-return/) | ISPF hierarchy, direct option entry, jump function and RETURN | ✅ Completed |
 | [03](labs/03-ispf-split-screen-swap-logical-screens/) | ISPF logical screens, SPLIT, SWAP and task-list validation | ✅ Completed |
 | [04](labs/04-ispf-dataset-names-member-lists/) | Data set naming, DSLIST and member-list processing | ✅ Completed |
+| [05](labs/05-ispf-browse-navigation-scrolling-locate-labels/) | ISPF Browse navigation, scrolling, LOCATE and labels | ✅ Completed |
 
 ## Method
 
-Each lab records the objective, concepts, exact interactive flow, commands, observed results, evidence, security review and source references. Historical MVS material is validated against the behavior of the z/OS environment instead of being reproduced blindly.
+Each lab records the objective, architecture metadata, concepts, exact interactive flow, commands, observed results, evidence, security review and source references. Historical MVS material is validated against the behavior of the z/OS environment instead of being reproduced blindly.
+
+Architecture V2 classifies new work by engineering domain, capability, lifecycle stage, maturity level and integration level while preserving the historical lab sequence.
 
 ## Environment
 
@@ -29,6 +32,39 @@ Each lab records the objective, concepts, exact interactive flow, commands, obse
 This repository owns the interactive TSO/E and ISPF foundation of the wider z/OS engineering laboratory. It provides the operator-facing base later consumed by JCL, REXX, scheduler tooling and other specialized repositories.
 
 See [MVS TSO/ISPF Ecosystem Integration](docs/ECOSYSTEM-INTEGRATION.md).
+
+## Architecture V2 progression
+
+```text
+TSO/E logon
+     |
+     v
+READY mode
+     |
+     v
+ISPF entry
+     |
+     v
+ISPF navigation
+     |
+     v
+logical-screen operation
+     |
+     v
+dataset/member work
+     |
+     v
+Browse
+     |
+     v
+advanced Browse / Find
+     |
+     v
+Edit and utilities
+     |
+     v
+REXX / ISPF automation prerequisites
+```
 
 ## Publication security
 

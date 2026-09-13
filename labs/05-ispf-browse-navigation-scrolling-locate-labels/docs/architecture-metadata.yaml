@@ -1,0 +1,46 @@
+lab:
+  historical_id: "labs/05-ispf-browse-navigation-scrolling-locate-labels"
+  title: "ISPF Browse Navigation, Scrolling, LOCATE and Labels"
+  status: "VALIDATED"
+
+architecture:
+  domain: "Operations and Service Management"
+  capability: "ISPF read-only data inspection and navigation"
+  lifecycle:
+    - Discover
+    - Operate
+  maturity: "M1 — Foundational"
+  integration_level: "I0 — Standalone"
+
+relationships:
+  components:
+    - TSO/E
+    - ISPF
+    - PDS
+  repositories:
+    - MVS_TSO_ISPF
+  tags:
+    - REL-JCL
+    - REL-AUTOMATION
+
+dependencies:
+  - "D1: Lab 04 — data set and member-list processing"
+  - "D4: active TSO/E and ISPF environment"
+
+evidence:
+  - screenshots
+  - command-sequence
+  - observed-messages
+  - publication-security-review
+
+result:
+  execution: "SUCCESS"
+  validation: "VALIDATED"
+  operational: "Read-only Browse navigation validated"
+  security: "APPROVED"
+  recovery: "NOT REQUIRED"
+  persistent_change: "NONE"
+  batch_rc: "NOT APPLICABLE"
+
+next_capability:
+  - "Advanced ISPF Browse commands"

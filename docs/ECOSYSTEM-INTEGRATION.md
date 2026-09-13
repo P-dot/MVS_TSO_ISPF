@@ -6,7 +6,7 @@ This repository provides the interactive entry point into the wider z/OS Enginee
 
 Its responsibility is to establish the operator-facing foundations of TSO/E and ISPF before those capabilities are consumed by JCL, REXX, scheduler tooling, system operations and other repositories.
 
-The repository focuses on how a user enters, navigates and works inside the z/OS interactive environment.
+The repository focuses on how a user enters, navigates, inspects and works inside the z/OS interactive environment.
 
 ```text
 3270 / TN3270
@@ -29,7 +29,7 @@ The repository focuses on how a user enters, navigates and works inside the z/OS
 
 ### z/OS Engineering Laboratory
 
-Provides the common ADCD/Hercules system context, engineering methodology and cross-repository architecture.
+Provides the common ADCD/Hercules system context, engineering methodology, Architecture V1 repository relationships and Architecture V2 engineering classification.
 
 Status: **Active architectural dependency**
 
@@ -57,7 +57,7 @@ Status: **Validated foundation**
 
 ### JCL_LABS
 
-JCL work performed through ISPF depends on the editor, dataset navigation and interactive workflow introduced here.
+JCL work performed through ISPF depends on the editor, dataset navigation, Browse and interactive workflow introduced here.
 
 Relationship:
 
@@ -67,7 +67,7 @@ MVS_TSO_ISPF -> JCL_LABS
 
 Status: **Validated interactive foundation**
 
-Lab 04 validates real partitioned-data-set discovery and member-list handling using `IBMUSER.JCL.LAB` as an ISPF object. The JCL content itself remains out of scope and continues to belong to `JCL_LABS`.
+Labs 04 and 05 use `IBMUSER.JCL.LAB` as an ISPF data object. JCL semantics remain out of scope and continue to belong to `JCL_LABS`.
 
 ### zos-batch-scheduler
 
@@ -83,21 +83,9 @@ Status: **Planned integration path**
 
 ### Other application and operations repositories
 
-COBOL, Db2, CICS, VSAM, PL/I, Assembler and system-engineering labs frequently rely on TSO/E and ISPF as the operator interface used to edit members, navigate datasets, submit jobs and inspect results.
+COBOL, Db2, CICS, VSAM, PL/I, Assembler and system-engineering labs frequently rely on TSO/E and ISPF as the operator interface used to inspect members, edit source, navigate datasets, submit jobs and inspect results.
 
 Status: **Shared interactive foundation**
-
-## Consumes
-
-This repository currently consumes:
-
-- 3270/TN3270 interactive access;
-- TSO/E;
-- ISPF;
-- partitioned and sequential datasets used during navigation and editing;
-- the z/OS user session and command environment.
-
-These are platform services. Their configuration and security are owned by other parts of the ecosystem.
 
 ## Produces
 
@@ -110,11 +98,11 @@ The repository currently produces:
 - validated logical-screen operation with SPLIT, SWAP and SWAP LIST;
 - validated DSLIST data-set discovery;
 - validated partitioned-data-set member-list processing;
-- repeatable operator navigation and selection patterns;
-- security-reviewed evidence;
-- documented interactive procedures.
-
-Future labs are expected to extend this into Browse, Edit, utilities, command interaction and automation prerequisites.
+- validated read-only Browse navigation;
+- validated scroll-amount control;
+- validated Browse line-number and label-based positioning;
+- repeatable operator navigation and inspection procedures;
+- security-reviewed evidence.
 
 ## Validated Integration Paths
 
@@ -144,9 +132,7 @@ ISPF Primary Option Menu
      panel hierarchy
           |
           +--> direct option entry
-          |
           +--> jump function
-          |
           +--> RETURN
 ```
 
@@ -178,15 +164,11 @@ PREFIX(IBMUSER)
 ISPF DSLIST
       |
       v
-IBMUSER data sets
-      |
-      v
 partitioned data set
       |
       v
 member list
       |
-      +--> line selection
       +--> SELECT
       +--> LOCATE
       +--> SORT
@@ -195,6 +177,29 @@ member list
 ```
 
 Validated by Lab 04.
+
+### Read-only Browse operator path
+
+```text
+PDS member list
+      |
+      v
+BROWSE member
+      |
+      +--> PAGE / HALF
+      +--> numeric scroll
+      +--> MAX
+      +--> LOCATE line
+      +--> assign label
+      +--> LOCATE label
+      |
+      v
+END -> member list
+```
+
+Validated by Lab 05.
+
+Lab 05 is a capability validation inside `MVS_TSO_ISPF`; it is not a cross-repository integration merely because the inspected member contains JCL.
 
 ### REXX foundation path
 
@@ -210,24 +215,65 @@ MVS_TSO_ISPF
 
 The interactive foundation is validated here. REXX execution itself is validated in the REXX repository.
 
-## Planned Cross-Repository Paths
+## Architecture V2 classification
 
-The following are architectural targets and must not be interpreted as completed integrations.
+New labs in this repository should record:
 
-### ISPF automation path
+- engineering domain;
+- capability;
+- lifecycle stage;
+- maturity level;
+- integration level;
+- dependencies;
+- evidence;
+- validation status;
+- next capability.
+
+The near-term capability progression is:
 
 ```text
-MVS_TSO_ISPF
+dataset/member work
       |
       v
-     REXX
+Browse fundamentals
       |
       v
-ISPF services
+advanced Browse commands
       |
       v
-operator automation
+Browse FIND / RFIND
+      |
+      v
+Edit
+      |
+      v
+utilities
+      |
+      v
+REXX / ISPF automation prerequisites
 ```
+
+## Planned Cross-Repository Paths
+
+### Operations Automation — Production Track 08
+
+```text
+TSO / ISPF
+    |
+    v
+REXX
+    |
+    v
+Operational procedure
+    |
+    v
+Scheduler / USS / z/OSMF
+    |
+    v
+REST / External Automation
+```
+
+`MVS_TSO_ISPF` supplies the manual and operator-facing capability foundation. Automation belongs primarily to the repositories and tracks that own the automation logic.
 
 ### Batch operator path
 
@@ -235,42 +281,31 @@ operator automation
 MVS_TSO_ISPF
       |
       v
- dataset/member editing
+dataset/member inspection and editing
       |
       v
-     JCL
+JCL
       |
       v
-    JES2
+JES2
 ```
 
-Lab 04 now validates the data-set/member navigation prerequisite. Editing and submission remain for later labs or the specialized batch repository.
-
-### Scheduler operator path
-
-```text
-MVS_TSO_ISPF
-      |
-      v
-REXX / ISPF services
-      |
-      v
-zos-batch-scheduler
-```
+Labs 04-05 validate navigation and read-only inspection prerequisites. Editing and submission remain later capabilities or belong to the specialized batch repository when the engineering objective is JCL/JES2 behavior.
 
 ## Integration Status
 
-| Integration | Status | Evidence |
-| --- | --- | --- |
+| Integration / capability path | Status | Evidence |
+|---|---|---|
 | 3270/TN3270 -> TSO/E | Validated | Lab 01 |
 | TSO/E -> READY -> ISPF | Validated | Lab 01 |
 | ISPF hierarchy/navigation | Validated | Lab 02 |
 | ISPF logical-screen operation | Validated | Lab 03 |
 | ISPF DSLIST -> PDS member list | Validated | Lab 04 |
-| MVS_TSO_ISPF -> REXX foundation | Validated foundation | REXX Labs 01-02 consume this environment |
-| MVS_TSO_ISPF -> JCL workflow | Validated interactive foundation | Lab 04 uses a JCL PDS as the navigation object; JCL semantics stay in JCL_LABS |
+| ISPF member list -> read-only Browse navigation | Validated | Lab 05 |
+| MVS_TSO_ISPF -> REXX foundation | Validated foundation | REXX labs consume this environment |
+| MVS_TSO_ISPF -> JCL workflow | Validated interactive foundation | JCL semantics remain in JCL_LABS |
 | REXX -> ISPF services | Planned | Future REXX/ISPF work |
-| MVS_TSO_ISPF -> scheduler operator tooling | Planned | Future integration |
+| MVS_TSO_ISPF -> scheduler operator tooling | Planned | Production Track 08 |
 
 ## Scope Boundaries
 
@@ -289,13 +324,11 @@ The integration rule is:
 
 ```text
 Learn and validate the interactive environment here.
-Consume that environment from the specialized repositories.
+Consume that environment from specialized repositories.
 Do not duplicate their domain-specific labs inside MVS_TSO_ISPF.
 ```
 
 ## Development Direction
-
-The current progression is:
 
 ```text
 TSO/E logon
@@ -316,7 +349,10 @@ logical-screen operation
 dataset/member work
      |
      v
-Browse
+Browse fundamentals
+     |
+     v
+advanced Browse / Find
      |
      v
 Edit and utilities
@@ -328,22 +364,29 @@ REXX / ISPF automation prerequisites
 cross-repository operator workflows
 ```
 
-Labs 01-04 validate the path through dataset/member work. Near-term work should now continue with Browse and Edit behavior before adding automation or cross-repository tooling.
+Labs 01-05 validate the path through read-only Browse fundamentals.
 
 ## Engineering and Publication Rules
 
-Each lab should continue to record:
+Each new lab should record:
 
+- Architecture V2 metadata;
 - objective;
-- concepts;
+- engineering context;
+- scope and preconditions;
 - exact interactive flow;
 - commands;
-- observed results;
+- expected result;
+- observed result;
 - evidence;
-- security review;
+- failure or exception analysis where appropriate;
+- recovery/rollback;
+- publication-security review;
+- cross-repository relationships;
+- next capability;
 - references.
 
-Cross-repository work should follow the common engineering cycle:
+The common engineering cycle remains:
 
 ```text
 Build -> Execute -> Observe -> Diagnose -> Correct -> Validate -> Document
@@ -359,6 +402,6 @@ Before publication:
 
 ## Master Architecture
 
-The broader ecosystem architecture is maintained in:
+The broader ecosystem architecture and Architecture V2 are maintained in:
 
 https://github.com/P-dot/zos-adcd-hercules-engineering-lab

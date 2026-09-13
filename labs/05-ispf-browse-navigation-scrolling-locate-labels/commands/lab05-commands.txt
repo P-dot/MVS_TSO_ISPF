@@ -1,0 +1,83 @@
+Lab 05 — ISPF Browse Navigation, Scrolling, LOCATE and Labels
+
+Architecture V2:
+Domain: Operations and Service Management
+Capability: ISPF read-only data inspection and navigation
+Lifecycle: Discover / Operate
+Maturity: M1 — Foundational
+Integration: I0 — Standalone
+Validation: VALIDATED
+
+Interactive sequence:
+
+1. Open DSLIST
+   =3.4
+
+2. Locate/select data set
+   IBMUSER.JCL.LAB
+   B
+
+3. Select member
+   S  L10PREP
+
+4. Browse baseline
+   BROWSE IBMUSER.JCL.LAB(L10PREP)
+   Scroll initially observed as CSR
+
+5. Page scrolling
+   Scroll ===> PAGE
+   PF8 / Down
+
+6. Half-page scrolling
+   Scroll ===> HALF
+   PF8 / Down
+
+7. Numeric scrolling
+   Scroll ===> 10
+   PF8 / Down
+
+8. Maximum scroll to bottom
+   Scroll ===> MAX
+   PF8 / Down
+
+Observed:
+   Bottom of Data
+   Scroll field subsequently returned to 0010
+
+9. Maximum scroll to top
+   Scroll ===> MAX
+   PF7 / Up
+
+Observed:
+   Top of Data
+
+10. Locate line 40
+    L 40
+
+11. Assign label
+    .MARK
+
+Observed:
+    Label '.MARK' assigned
+
+12. Move away from saved position
+    BOTTOM
+    (or equivalent movement to the lower boundary)
+
+13. Locate label
+    L MARK
+
+Observed:
+    Label 'MARK' located
+
+14. Terminate Browse
+    PF3 / END
+
+Observed:
+    Return to IBMUSER.JCL.LAB member list
+
+Persistent z/OS changes:
+NONE
+
+Batch RC:
+NOT APPLICABLE
