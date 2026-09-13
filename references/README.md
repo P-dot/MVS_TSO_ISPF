@@ -32,7 +32,16 @@ Lab 06 is based mainly on:
 - Bosler's description of Recursive Browse, where the parent Browse session is suspended while another member is browsed.
 - IBM z/OS 1.11 / ISPF 6.1 behavior as directly observed in this laboratory.
 
-The lab deliberately does not include `FIND`; Bosler treats that as a separate Browse capability in Chapter 9 and it remains the next focused lab.
+## Lab 07 source mapping
+
+Lab 07 is based mainly on:
+
+- Bosler, Chapter 9, *The Browse FIND Command*: basic `FIND`, repeat find (`RFIND`), case handling, search direction, context, column restrictions, hexadecimal strings and picture strings.
+- Bosler's FIND syntax summary, including `NEXT`, `PREV`, `FIRST`, `LAST`, `ALL`, `CHARS`, `PREFIX`, `SUFFIX` and `WORD`.
+- Bosler's distinction between normal text strings and case-sensitive character strings.
+- IBM z/OS 1.11 / ISPF 6.1 behavior as directly observed in this laboratory.
+
+The lab deliberately stops before Edit. Bosler moves from Browse FIND to the Edit function in the next chapter, which is preserved as the next capability boundary.
 
 Other IBM manuals are added only when a lab requires them.
 

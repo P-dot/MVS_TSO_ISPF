@@ -62,6 +62,10 @@ Browse navigation / positioning
         v
 Lab 06
 Browse representation / HEX / recursive Browse
+        |
+        v
+Lab 07
+Browse FIND / RFIND / targeted search
 ```
 
 ## Validated Browse path
@@ -85,46 +89,47 @@ BROWSE
 ```text
 BROWSE
    |
-   +--> COLUMNS
-   |      |
-   |      +--> RESET
-   |
+   +--> COLUMNS / RESET
    +--> DISPLAY CC / NOCC
-   |
-   +--> HEX ON VERT
-   |      |
-   |      +--> HEX ON DATA
-   |      |
-   |      +--> HEX OFF
-   |
-   +--> BROWSE another member
-          |
-          v
-      recursive Browse
-          |
-          v
-        END
-          |
-          v
-      parent Browse
+   +--> HEX ON VERT / DATA / OFF
+   +--> Recursive Browse
 ```
 
-Lab 06 validates read-only display transformation and nested inspection. It does not modify the underlying PDS member.
+### Browse targeted search — Lab 07
+
+```text
+BROWSE
+   |
+   +--> FIND
+   |      |
+   |      +--> RFIND
+   |      +--> FIRST / LAST / ALL
+   |      +--> CHARS / WORD / PREFIX
+   |      +--> column limits
+   |      +--> X'..' hexadecimal search
+   |      +--> P'..' picture search
+   |      +--> case-sensitive C'...'
+   |
+   v
+targeted read-only inspection
+```
+
+Lab 07 closes the current Browse capability block before Edit begins.
 
 ## Cross-repository relationships
 
 ### JCL_LABS
 
-`IBMUSER.JCL.LAB` supplies real data for Labs 04–06.
+`IBMUSER.JCL.LAB` supplies real data for Labs 04–07.
 
 Relationship:
 
 ```text
-MVS_TSO_ISPF -> interactive inspection of JCL artifacts
+MVS_TSO_ISPF -> interactive inspection/search of JCL artifacts
 JCL_LABS     -> JCL semantics / JES2 behavior
 ```
 
-The use of a JCL member as test data does not make Lab 06 a cross-repository integration proof.
+The use of JCL text as search input does not itself create a cross-repository integration proof.
 
 ### REXX
 
@@ -145,20 +150,6 @@ Operations Automation
 
 Status: **foundation only; automation not yet implemented here**
 
-## Architecture V2 classification rule
-
-New labs should record:
-
-- engineering domain;
-- capability;
-- lifecycle stage;
-- maturity level;
-- integration level;
-- dependencies;
-- validation status;
-- evidence;
-- next capability.
-
 ## Near-term roadmap
 
 ```text
@@ -168,10 +159,10 @@ Browse navigation              VALIDATED
 Browse representation / HEX    VALIDATED
         |
         v
-Browse FIND / RFIND            NEXT
+Browse FIND / RFIND            VALIDATED
         |
         v
-Edit
+Edit fundamentals              NEXT
         |
         v
 ISPF utilities

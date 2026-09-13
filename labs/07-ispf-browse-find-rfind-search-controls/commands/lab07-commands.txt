@@ -1,0 +1,69 @@
+Lab 07 — ISPF Browse FIND, RFIND and Search Controls
+
+Architecture V2
+---------------
+Domain: Operations and Service Management
+Capability: ISPF Browse targeted data search and read-only inspection
+Lifecycle: Operate / Observe
+Maturity: M1 — Foundational
+Integration: I0 — Standalone
+Validation: VALIDATED
+
+Target:
+IBMUSER.JCL.LAB(L10PREP)
+
+Validated commands
+------------------
+
+FIND MEMBER
+PF5 / RFIND
+FIND MEMBER ALL
+FIND MEMBER FIRST
+FIND MEMBER LAST
+PF5 / RFIND
+FIND member FIRST
+FIND C'MEMBER' FIRST
+FIND MEMBER CHARS
+FIND MEMBER WORD
+F MEM PREFIX
+FIND '//' 1
+FIND DSN 1 30 FIRST
+FIND X'40'
+FIND P'##'
+FIND C'member' FIRST
+PF3 / END
+
+Observed highlights
+-------------------
+
+FIND MEMBER
+  -> CHARS 'MEMBER' found
+
+FIND MEMBER ALL
+  -> 21 CHARS 'MEMBER'
+
+FIND member FIRST
+  -> uppercase MEMBER found
+  -> default text search is case-insensitive
+
+FIND C'MEMBER' FIRST
+  -> exact uppercase string found
+
+FIND C'member' FIRST
+  -> No CHARS 'member' found
+  -> controlled negative test
+
+FIND X'40'
+  -> hexadecimal byte 40 found
+
+FIND P'##'
+  -> numeric pattern found; observed match included 10
+
+PF3 / END
+  -> returned to IBMUSER.JCL.LAB member list
+
+Persistent z/OS changes:
+NONE
+
+Batch RC:
+NOT APPLICABLE
