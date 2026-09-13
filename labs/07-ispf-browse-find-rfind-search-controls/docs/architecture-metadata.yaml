@@ -1,0 +1,49 @@
+lab:
+  historical_id: "labs/07-ispf-browse-find-rfind-search-controls"
+  title: "ISPF Browse FIND, RFIND and Search Controls"
+  status: "VALIDATED"
+
+architecture:
+  domain: "Operations and Service Management"
+  capability: "ISPF Browse targeted data search and read-only inspection"
+  lifecycle:
+    - Operate
+    - Observe
+  maturity: "M1 — Foundational"
+  integration_level: "I0 — Standalone"
+
+relationships:
+  components:
+    - TSO/E
+    - ISPF
+    - PDS
+    - Browse FIND
+  repositories:
+    - MVS_TSO_ISPF
+  tags:
+    - REL-JCL
+    - REL-AUTOMATION
+
+dependencies:
+  - "D1: Lab 06 — Browse display controls and Recursive Browse"
+  - "D4: active TSO/E and ISPF environment"
+
+evidence:
+  - screenshots
+  - command-sequence
+  - search-result-messages
+  - controlled-negative-test
+  - publication-security-review
+
+result:
+  execution: "SUCCESS"
+  validation: "VALIDATED"
+  operational: "Targeted read-only Browse search validated"
+  negative_test: "EXPECTED NOT FOUND"
+  security: "APPROVED"
+  recovery: "NOT REQUIRED"
+  persistent_change: "NONE"
+  batch_rc: "NOT APPLICABLE"
+
+next_capability:
+  - "ISPF Edit fundamentals"
