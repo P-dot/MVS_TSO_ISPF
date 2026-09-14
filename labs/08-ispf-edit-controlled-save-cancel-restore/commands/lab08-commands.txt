@@ -1,0 +1,152 @@
+Lab 08 — ISPF Edit Fundamentals: Controlled Modify, CANCEL, SAVE and Restore
+
+Architecture V2
+---------------
+Domain: Operations and Service Management
+Capability: Controlled ISPF Edit transaction lifecycle and safe data modification
+Lifecycle: Baseline / Configure / Operate / Observe / Recover
+Maturity: M3 — Resilient
+Integration: I0 — Standalone
+Validation: VALIDATED
+
+Repository-owned fixture
+------------------------
+PDS:
+IBMUSER.ISPF.LAB
+
+Member:
+IBMUSER.ISPF.LAB(EDIT08)
+
+Canonical baseline
+------------------
+ISPF-LAB08-BASELINE
+LINE-02-UNCHANGED
+LINE-03-CANCEL-TEST
+LINE-04-SAVE-TEST
+LINE-05-UNCHANGED
+ISPF-LAB08-END
+
+Validated interactive sequence
+------------------------------
+
+1. Allocate repository-owned PDS
+   Data set: IBMUSER.ISPF.LAB
+   DSORG: PO / PDS
+   RECFM: FB
+   LRECL: 80
+   BLKSIZE: 0
+   SPACE: TRACK
+   PRIMARY: 1
+   SECONDARY: 1
+   DIRECTORY BLOCKS: 10
+
+2. Create EDIT08 through ISPF Edit.
+   Enter canonical six-line baseline.
+
+3. Explicit initial persistence:
+   SAVE
+
+Observed:
+Member EDIT08 saved
+
+4. Independent baseline verification:
+   BROWSE IBMUSER.ISPF.LAB(EDIT08)
+
+5. Edit Profile baseline:
+   PROFILE 9
+
+Observed relevant state:
+LAB (FIXED - 80)
+RECOVERY OFF WARN
+NUMBER OFF
+CAPS ON
+HEX OFF
+NULLS ON STD
+TABS OFF
+AUTOSAVE ON
+AUTONUM OFF
+AUTOLIST OFF
+STATS ON
+PROFILE UNLOCK
+IMACRO NONE
+PACK OFF
+NOTE ON
+HILITE DEFAULT CURSOR FIND
+
+Observed warning:
+UNDO is not available until RECOVERY ON is enabled.
+
+6. CANCEL rollback transaction
+
+Original:
+LINE-03-CANCEL-TEST
+
+Working-state modification:
+LINE-03-CANCELLED-CHANGE
+
+Command:
+CANCEL
+
+Independent Browse verification:
+LINE-03-CANCEL-TEST
+
+Result:
+ROLLBACK PASS
+
+7. SAVE persistence transaction
+
+Original:
+LINE-04-SAVE-TEST
+
+Working-state modification:
+LINE-04-SAVED-CHANGE
+
+Command:
+SAVE
+
+Observed:
+Member EDIT08 saved
+
+Then:
+CANCEL
+
+Independent Browse verification:
+LINE-04-SAVED-CHANGE
+
+Result:
+PERSISTENCE PASS
+
+8. Controlled baseline restoration
+
+Change:
+LINE-04-SAVED-CHANGE
+to:
+LINE-04-SAVE-TEST
+
+Command:
+SAVE
+
+Observed:
+Member EDIT08 saved
+
+Then:
+CANCEL
+
+9. Independent post-recovery Browse
+
+Observed final content:
+ISPF-LAB08-BASELINE
+LINE-02-UNCHANGED
+LINE-03-CANCEL-TEST
+LINE-04-SAVE-TEST
+LINE-05-UNCHANGED
+ISPF-LAB08-END
+
+Result:
+POST-RECOVERY VALIDATION PASS
+
+Persistent final state:
+BASELINE RESTORED
+
+Batch RC:
+NOT APPLICABLE

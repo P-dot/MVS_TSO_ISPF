@@ -32,6 +32,7 @@ Its responsibility is to establish the operator-facing foundations of TSO/E and 
 - logical screens;
 - data-set/member navigation;
 - Browse;
+- controlled Edit behavior;
 - future Edit and utility productivity;
 - prerequisites for ISPF/REXX automation.
 
@@ -66,61 +67,68 @@ Browse representation / HEX / recursive Browse
         v
 Lab 07
 Browse FIND / RFIND / targeted search
+        |
+        v
+Lab 08
+controlled Edit / SAVE / CANCEL / restore
 ```
 
-## Validated Browse path
+## Browse capability block
 
-### Browse navigation — Lab 05
+Labs 05–07 validate read-only navigation, representation and targeted search.
 
 ```text
-PDS member list
+Browse navigation
       |
       v
-BROWSE
+Browse representation
       |
-      +--> PAGE / HALF / numeric / MAX
-      +--> LOCATE line
-      +--> temporary label
-      +--> LOCATE label
+      v
+Browse search
 ```
 
-### Browse representation and nesting — Lab 06
+Lab 07 closes the current read-only Browse block.
+
+## Controlled Edit path — Lab 08
+
+Lab 08 introduces state-changing ISPF work using a repository-owned fixture.
 
 ```text
-BROWSE
-   |
-   +--> COLUMNS / RESET
-   +--> DISPLAY CC / NOCC
-   +--> HEX ON VERT / DATA / OFF
-   +--> Recursive Browse
+known baseline
+      |
+      v
+Edit working state
+      |
+      +---- CANCEL ----> baseline preserved
+      |
+      +---- SAVE ------> change persisted
+                              |
+                              v
+                       controlled restore
+                              |
+                              v
+                       baseline revalidated
 ```
 
-### Browse targeted search — Lab 07
+The fixture is isolated in:
 
 ```text
-BROWSE
-   |
-   +--> FIND
-   |      |
-   |      +--> RFIND
-   |      +--> FIRST / LAST / ALL
-   |      +--> CHARS / WORD / PREFIX
-   |      +--> column limits
-   |      +--> X'..' hexadecimal search
-   |      +--> P'..' picture search
-   |      +--> case-sensitive C'...'
-   |
-   v
-targeted read-only inspection
+IBMUSER.ISPF.LAB(EDIT08)
 ```
 
-Lab 07 closes the current Browse capability block before Edit begins.
+with a canonical repository copy:
+
+```text
+fixtures/edit/EDIT08-baseline.txt
+```
+
+This avoids making state-changing ISPF experiments against JCL, COBOL, REXX or other repository-owned artifacts.
 
 ## Cross-repository relationships
 
 ### JCL_LABS
 
-`IBMUSER.JCL.LAB` supplies real data for Labs 04–07.
+`IBMUSER.JCL.LAB` supplied real read-only data for Labs 04–07.
 
 Relationship:
 
@@ -129,11 +137,11 @@ MVS_TSO_ISPF -> interactive inspection/search of JCL artifacts
 JCL_LABS     -> JCL semantics / JES2 behavior
 ```
 
-The use of JCL text as search input does not itself create a cross-repository integration proof.
+Beginning with state-changing Edit labs, `MVS_TSO_ISPF` uses its own fixture library. Future cross-repository modification or SUBMIT flows must be designed explicitly as integration labs rather than silently reusing another repository's artifacts.
 
 ### REXX
 
-The manual Browse capabilities form part of the prerequisite chain for later ISPF service automation:
+The manual ISPF capabilities form part of the prerequisite chain for later ISPF service automation:
 
 ```text
 MVS_TSO_ISPF
@@ -153,19 +161,22 @@ Status: **foundation only; automation not yet implemented here**
 ## Near-term roadmap
 
 ```text
-Browse navigation              VALIDATED
+Browse navigation                VALIDATED
         |
         v
-Browse representation / HEX    VALIDATED
+Browse representation / HEX      VALIDATED
         |
         v
-Browse FIND / RFIND            VALIDATED
+Browse FIND / RFIND              VALIDATED
         |
         v
-Edit fundamentals              NEXT
+Controlled Edit lifecycle        VALIDATED
         |
         v
-ISPF utilities
+Edit line-command fundamentals   NEXT
+        |
+        v
+advanced Edit / utilities
         |
         v
 REXX / ISPF automation prerequisites

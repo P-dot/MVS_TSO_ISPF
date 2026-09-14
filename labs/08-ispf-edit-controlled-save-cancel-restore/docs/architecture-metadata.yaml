@@ -1,0 +1,59 @@
+lab:
+  historical_id: "labs/08-ispf-edit-controlled-save-cancel-restore"
+  title: "ISPF Edit Fundamentals: Controlled Modify, CANCEL, SAVE and Restore"
+  status: "VALIDATED"
+
+architecture:
+  domain: "Operations and Service Management"
+  capability: "Controlled ISPF Edit transaction lifecycle and safe data modification"
+  lifecycle:
+    - Baseline
+    - Configure
+    - Operate
+    - Observe
+    - Recover
+  maturity: "M3 — Resilient"
+  integration_level: "I0 — Standalone"
+
+relationships:
+  components:
+    - TSO/E
+    - ISPF
+    - ISPF Edit
+    - PDS
+    - Edit Profile
+  repositories:
+    - MVS_TSO_ISPF
+  tags:
+    - REL-AUTOMATION
+    - REL-JCL-FUTURE-INTEGRATION
+
+dependencies:
+  - "D1: Lab 07 — Browse FIND/RFIND and targeted search"
+  - "D4: active TSO/E and ISPF environment"
+  - "D4: repository-owned PDS IBMUSER.ISPF.LAB"
+
+evidence:
+  - screenshots
+  - baseline-fixture
+  - command-sequence
+  - edit-profile-baseline
+  - rollback-validation
+  - persistence-validation
+  - post-recovery-validation
+  - publication-security-review
+
+result:
+  execution: "SUCCESS"
+  validation: "VALIDATED"
+  operational: "Controlled Edit SAVE/CANCEL lifecycle validated"
+  rollback: "VALIDATED"
+  persistence: "VALIDATED"
+  recovery: "VALIDATED"
+  post_recovery_validation: "PASS"
+  security: "APPROVED"
+  persistent_final_state: "BASELINE RESTORED"
+  batch_rc: "NOT APPLICABLE"
+
+next_capability:
+  - "ISPF Edit line-command fundamentals: insert and delete"
