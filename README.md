@@ -15,10 +15,11 @@ The lab sequence is documentation-led. The main historical/didactic source is Ku
 | [05](labs/05-ispf-browse-navigation-scrolling-locate-labels/) | ISPF Browse navigation, scrolling, LOCATE and labels | ✅ Completed |
 | [06](labs/06-ispf-browse-display-hex-recursive/) | ISPF Browse display controls, hexadecimal representation and recursive Browse | ✅ Completed |
 | [07](labs/07-ispf-browse-find-rfind-search-controls/) | ISPF Browse FIND, RFIND and search controls | ✅ Completed |
+| [08](labs/08-ispf-edit-controlled-save-cancel-restore/) | Controlled ISPF Edit lifecycle: SAVE, CANCEL, persistence and restore | ✅ Completed |
 
 ## Method
 
-Each lab records Architecture V2 metadata, objective, engineering context, scope, exact interactive flow, commands, observed results, evidence, security review and source references.
+Each lab records Architecture V2 metadata, objective, engineering context, scope, exact interactive flow, commands, expected and observed results, evidence, failure/recovery behavior, security review and source references.
 
 Architecture V2 classifies new work by engineering domain, capability, lifecycle stage, maturity level and integration level while preserving the historical lab sequence.
 
@@ -34,6 +35,23 @@ Architecture V2 classifies new work by engineering domain, capability, lifecycle
 This repository owns the interactive TSO/E and ISPF foundation of the wider z/OS engineering laboratory. It provides the operator-facing base later consumed by JCL, REXX, scheduler tooling and other specialized repositories.
 
 See [MVS TSO/ISPF Ecosystem Integration](docs/ECOSYSTEM-INTEGRATION.md).
+
+## Repository-owned Edit fixtures
+
+State-changing ISPF labs use repository-owned fixtures rather than modifying artifacts owned by JCL, COBOL, REXX or other specialized repositories.
+
+```text
+IBMUSER.ISPF.LAB
+        |
+        +--> EDIT08
+        +--> future Edit fixtures
+```
+
+The canonical Lab 08 baseline is preserved in:
+
+```text
+fixtures/edit/EDIT08-baseline.txt
+```
 
 ## Architecture V2 progression
 
@@ -65,7 +83,14 @@ Browse representation / recursive Browse
 Browse FIND / RFIND
      |
      v
-Edit and utilities
+controlled Edit lifecycle
+SAVE / CANCEL / restore
+     |
+     v
+Edit line commands
+     |
+     v
+advanced Edit / utilities
      |
      v
 REXX / ISPF automation prerequisites
