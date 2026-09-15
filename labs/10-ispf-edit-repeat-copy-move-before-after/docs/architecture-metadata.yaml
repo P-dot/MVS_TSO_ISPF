@@ -1,0 +1,65 @@
+lab:
+  historical_id: "labs/10-ispf-edit-repeat-copy-move-before-after"
+  title: "ISPF Edit Line Commands: Repeat, Copy, Move, Before and After"
+  status: "VALIDATED"
+
+architecture:
+  domain: "Operations and Service Management"
+  capability: "Controlled ISPF Edit record replication, relocation and multi-command execution"
+  lifecycle:
+    - Baseline
+    - Operate
+    - Observe
+    - Diagnose
+    - Recover
+  maturity: "M3 — Resilient"
+  integration_level: "I0 — Standalone"
+
+relationships:
+  components:
+    - TSO/E
+    - ISPF
+    - ISPF Edit
+    - PDS
+    - Edit line commands
+  repositories:
+    - MVS_TSO_ISPF
+  tags:
+    - REL-AUTOMATION
+    - REL-JCL-FUTURE-INTEGRATION
+
+dependencies:
+  - "D1: Lab 09 — INSERT/DELETE line commands"
+  - "D4: IBMUSER.ISPF.LAB available"
+
+evidence:
+  - screenshots
+  - baseline-fixture
+  - repeat-validation
+  - copy-validation
+  - move-validation
+  - pending-copy-move-state
+  - command-conflict-negative-test
+  - corrected-multiple-command-test
+  - rollback-validation
+  - post-recovery-validation
+  - publication-security-review
+
+result:
+  execution: "SUCCESS"
+  validation: "VALIDATED"
+  repeat: "PASS"
+  copy: "PASS"
+  move: "PASS"
+  pending_state: "VALIDATED"
+  command_conflict_negative_test: "PASS"
+  corrected_multiple_command_execution: "PASS"
+  rollback: "VALIDATED"
+  post_recovery_validation: "PASS"
+  final_persistent_record_count: 28
+  persistent_final_state: "BASELINE RESTORED"
+  security: "APPROVED"
+  batch_rc: "NOT APPLICABLE"
+
+next_capability:
+  - "ISPF Edit MASK and OVERLAY"

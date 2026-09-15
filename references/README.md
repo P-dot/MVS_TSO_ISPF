@@ -18,21 +18,27 @@ The project uses documentation as the primary learning source; no video course i
 
 ## Lab 09 source mapping
 
-Lab 09 follows Bosler Chapter 11, *Basic Edit Line Commands: Section 1*.
+Lab 09 follows Bosler Chapter 11, *Basic Edit Line Commands: Section 1*, covering INSERT and DELETE forms and pending block-command recovery.
+
+## Lab 10 source mapping
+
+Lab 10 follows Bosler Chapter 12, *Basic Edit Line Commands: Section 2*.
 
 Validated topics:
 
-- line-command area and Enter-driven execution;
-- `I` single-line insertion;
-- `I3` multiple-line insertion;
-- `D` single-line deletion;
-- `D3` count-based deletion;
-- `DD` / `DD` block deletion;
-- pending block-command state;
-- `RESET` clearing an incomplete block line command.
+- `R`, `R3`, and `RR`/`RR`;
+- `A` and `B` as destination controls;
+- `C`, `C2`, and `CC`/`CC`;
+- `M`, `M2`, and `MM`/`MM`;
+- numeric destination repetition with `A2`;
+- `MOVE/COPY is pending`;
+- multiple line commands;
+- controlled `Command conflict` negative test;
+- corrected non-conflicting multiple-command execution;
+- `CANCEL` rollback and independent Browse verification after each transaction.
 
-IBM Redbooks is used as a complementary source for the standard `I`, `In`, `D`, `Dn`, and block line-command model.
+IBM Redbooks is used as complementary confirmation of standard ISPF Edit line-command semantics.
 
-Lab 09 deliberately stops before Bosler Chapter 12 topics: Repeat, Before/After, Copy and Move.
+Lab 10 deliberately stops before Bosler Chapter 13 topics: `MASK` and `OVERLAY`.
 
 The source publications themselves are **not redistributed in this repository**.

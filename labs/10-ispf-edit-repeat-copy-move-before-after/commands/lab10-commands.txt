@@ -1,0 +1,111 @@
+Lab 10 — ISPF Edit Repeat, Copy, Move, Before and After
+
+Target:
+IBMUSER.ISPF.LAB(EDIT10)
+
+Baseline:
+28 records
+
+REPEAT transaction
+------------------
+R on R-SINGLE
+  28 -> 29
+
+R3 on R-NUMERIC
+  29 -> 32
+
+RR / RR on R-BLOCK-A/B
+  32 -> 34
+
+CANCEL
+Independent BROWSE
+  34 -> persistent baseline 28
+
+COPY transaction
+----------------
+C on C-SINGLE
+A on C-TARGET-A
+  28 -> 29
+  source preserved
+  copy placed after target
+
+C2 on C-NUM-A
+B on C-TARGET-B
+  29 -> 31
+  C-NUM-A/B copied before target
+
+CC / CC on C-BLOCK-A/B
+A on C-TARGET-C
+  pending state observed: MOVE/COPY is pending
+  completed result: 31 -> 33
+  source block preserved
+  copied block order preserved
+
+CANCEL
+Independent BROWSE
+  persistent baseline 28
+
+MOVE transaction
+----------------
+M on M-SINGLE
+B on M-TARGET-A
+  28 -> 28
+  source removed and relocated before target
+
+M2 on M-NUM-A
+A2 on M-TARGET-B
+  remove 2 source records
+  place 2-record payload twice
+  28 -> 30
+
+MM / MM on M-BLOCK-A/B
+B on M-TARGET-C
+  30 -> 30
+  block relocated before target
+  order preserved
+
+CANCEL
+Independent BROWSE
+  persistent baseline 28
+
+Multiple-command negative test
+------------------------------
+Prepared together:
+R MULTI-R
+C MULTI-C
+M MULTI-M
+A MULTI-C-TARGET
+B MULTI-M-TARGET
+
+Observed:
+Command conflict
+
+Action:
+CANCEL
+
+Independent BROWSE:
+28-record baseline restored
+
+Corrected multiple-command test
+-------------------------------
+Prepared together:
+R MULTI-R
+C MULTI-C
+A MULTI-C-TARGET
+
+ONE ENTER
+
+Observed:
+MULTI-R repeated
+MULTI-C source preserved
+copy placed after MULTI-C-TARGET
+record count 28 -> 30
+
+CANCEL
+
+Final independent BROWSE:
+28 records
+baseline restored
+
+Batch RC:
+NOT APPLICABLE
