@@ -17,12 +17,11 @@ The lab sequence is documentation-led. The main historical/didactic source is Ku
 | [07](labs/07-ispf-browse-find-rfind-search-controls/) | ISPF Browse FIND, RFIND and search controls | ✅ Completed |
 | [08](labs/08-ispf-edit-controlled-save-cancel-restore/) | Controlled ISPF Edit lifecycle: SAVE, CANCEL, persistence and restore | ✅ Completed |
 | [09](labs/09-ispf-edit-insert-delete-line-commands/) | ISPF Edit line commands: controlled INSERT and DELETE | ✅ Completed |
+| [10](labs/10-ispf-edit-repeat-copy-move-before-after/) | ISPF Edit Repeat, Copy, Move, Before/After and multiple-command handling | ✅ Completed |
 
 ## Method
 
 Each lab records Architecture V2 metadata, objective, engineering context, scope, exact interactive flow, commands, expected and observed results, evidence, failure/recovery behavior, security review and source references.
-
-Architecture V2 classifies new work by engineering domain, capability, lifecycle stage, maturity level and integration level while preserving the historical lab sequence.
 
 ## Environment
 
@@ -31,25 +30,27 @@ Architecture V2 classifies new work by engineering domain, capability, lifecycle
 - ISPF 6.1 (observed in the labs)
 - 3270/TN3270 interactive access
 
-## Ecosystem role
-
-This repository owns the interactive TSO/E and ISPF foundation of the wider z/OS engineering laboratory. It provides the operator-facing base later consumed by JCL, REXX, scheduler tooling and other specialized repositories.
-
-See [MVS TSO/ISPF Ecosystem Integration](docs/ECOSYSTEM-INTEGRATION.md).
-
 ## Repository-owned Edit fixtures
 
-State-changing ISPF labs use repository-owned fixtures rather than modifying artifacts owned by JCL, COBOL, REXX or other specialized repositories.
+State-changing ISPF labs use repository-owned fixtures under:
 
 ```text
 IBMUSER.ISPF.LAB
-        |
-        +--> EDIT08
-        +--> EDIT09
-        +--> future Edit fixtures
 ```
 
-Canonical baselines are preserved under `fixtures/edit/`.
+Canonical baselines are preserved under:
+
+```text
+fixtures/edit/
+```
+
+Current fixtures include:
+
+```text
+EDIT08
+EDIT09
+EDIT10
+```
 
 ## Architecture V2 progression
 
@@ -59,8 +60,9 @@ TSO/E logon
   -> dataset/member work
   -> Browse navigation / representation / search
   -> controlled Edit lifecycle
-  -> Edit INSERT / DELETE line commands
+  -> INSERT / DELETE
   -> Repeat / Copy / Move / Before / After
+  -> MASK / OVERLAY
   -> advanced Edit / utilities
   -> REXX / ISPF automation prerequisites
 ```
