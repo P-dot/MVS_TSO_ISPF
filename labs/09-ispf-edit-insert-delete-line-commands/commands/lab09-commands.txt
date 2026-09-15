@@ -1,0 +1,30 @@
+Lab 09 — ISPF Edit Line Commands: Controlled Record Insertion and Deletion
+
+Target: IBMUSER.ISPF.LAB(EDIT09)
+Baseline: 13 records
+
+INSERT path
+-----------
+I        -> 13 to 14
+I3       -> 14 to 17
+CANCEL   -> persistent state remains 13
+BROWSE   -> 13-record baseline verified
+
+DELETE path
+-----------
+D        -> 13 to 12
+D3       -> 12 to 9
+DD first marker only -> Block command incomplete
+RESET    -> pending DD cleared; data preserved; count remains 9
+DD / DD  -> 9 to 6
+CANCEL   -> persistent state remains 13
+BROWSE   -> 13-record baseline verified
+
+Observed transient condition
+----------------------------
+Invalid command name
+
+The evidence does not expose enough context to prove the exact invalid input. The execution then continued using correct line-command-area syntax. No persistent data impact remained.
+
+Final state: BASELINE RESTORED
+Batch RC: NOT APPLICABLE

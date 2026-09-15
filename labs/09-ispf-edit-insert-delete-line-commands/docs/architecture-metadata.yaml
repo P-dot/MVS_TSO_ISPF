@@ -1,0 +1,36 @@
+lab:
+  historical_id: "labs/09-ispf-edit-insert-delete-line-commands"
+  title: "ISPF Edit Line Commands: Controlled Record Insertion and Deletion"
+  status: "VALIDATED"
+
+architecture:
+  domain: "Operations and Service Management"
+  capability: "Controlled ISPF Edit record insertion and deletion"
+  lifecycle:
+    - Baseline
+    - Configure
+    - Operate
+    - Observe
+    - Recover
+  maturity: "M3 — Resilient"
+  integration_level: "I0 — Standalone"
+
+dependencies:
+  - "D1: Lab 08 — controlled Edit SAVE/CANCEL lifecycle"
+  - "D4: IBMUSER.ISPF.LAB available"
+
+result:
+  execution: "SUCCESS"
+  validation: "VALIDATED"
+  insertion: "VALIDATED"
+  deletion: "VALIDATED"
+  pending_block_recovery: "VALIDATED"
+  rollback: "VALIDATED"
+  post_recovery_validation: "PASS"
+  final_persistent_record_count: 13
+  persistent_final_state: "BASELINE RESTORED"
+  security: "APPROVED"
+  batch_rc: "NOT APPLICABLE"
+
+next_capability:
+  - "ISPF Edit Repeat, Copy, Move, Before and After line commands"

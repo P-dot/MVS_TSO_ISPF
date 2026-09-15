@@ -16,6 +16,7 @@ The lab sequence is documentation-led. The main historical/didactic source is Ku
 | [06](labs/06-ispf-browse-display-hex-recursive/) | ISPF Browse display controls, hexadecimal representation and recursive Browse | ✅ Completed |
 | [07](labs/07-ispf-browse-find-rfind-search-controls/) | ISPF Browse FIND, RFIND and search controls | ✅ Completed |
 | [08](labs/08-ispf-edit-controlled-save-cancel-restore/) | Controlled ISPF Edit lifecycle: SAVE, CANCEL, persistence and restore | ✅ Completed |
+| [09](labs/09-ispf-edit-insert-delete-line-commands/) | ISPF Edit line commands: controlled INSERT and DELETE | ✅ Completed |
 
 ## Method
 
@@ -44,56 +45,24 @@ State-changing ISPF labs use repository-owned fixtures rather than modifying art
 IBMUSER.ISPF.LAB
         |
         +--> EDIT08
+        +--> EDIT09
         +--> future Edit fixtures
 ```
 
-The canonical Lab 08 baseline is preserved in:
-
-```text
-fixtures/edit/EDIT08-baseline.txt
-```
+Canonical baselines are preserved under `fixtures/edit/`.
 
 ## Architecture V2 progression
 
 ```text
 TSO/E logon
-     |
-     v
-READY mode
-     |
-     v
-ISPF entry
-     |
-     v
-ISPF navigation
-     |
-     v
-logical-screen operation
-     |
-     v
-dataset/member work
-     |
-     v
-Browse navigation
-     |
-     v
-Browse representation / recursive Browse
-     |
-     v
-Browse FIND / RFIND
-     |
-     v
-controlled Edit lifecycle
-SAVE / CANCEL / restore
-     |
-     v
-Edit line commands
-     |
-     v
-advanced Edit / utilities
-     |
-     v
-REXX / ISPF automation prerequisites
+  -> ISPF navigation
+  -> dataset/member work
+  -> Browse navigation / representation / search
+  -> controlled Edit lifecycle
+  -> Edit INSERT / DELETE line commands
+  -> Repeat / Copy / Move / Before / After
+  -> advanced Edit / utilities
+  -> REXX / ISPF automation prerequisites
 ```
 
 ## Publication security
