@@ -18,16 +18,17 @@ The lab sequence is documentation-led. The main historical/didactic source is Ku
 | [08](labs/08-ispf-edit-controlled-save-cancel-restore/) | Controlled ISPF Edit lifecycle: SAVE, CANCEL, persistence and restore | ✅ Completed |
 | [09](labs/09-ispf-edit-insert-delete-line-commands/) | ISPF Edit line commands: controlled INSERT and DELETE | ✅ Completed |
 | [10](labs/10-ispf-edit-repeat-copy-move-before-after/) | ISPF Edit Repeat, Copy, Move, Before/After and multiple-command handling | ✅ Completed |
+| [11](labs/11-ispf-edit-mask-overlay-cols/) | ISPF Edit MASK, OVERLAY and column indicators | ✅ Completed |
 
 ## Method
 
-Each lab records Architecture V2 metadata, objective, engineering context, scope, exact interactive flow, commands, expected and observed results, evidence, failure/recovery behavior, security review and source references.
+Each lab records Architecture V2 metadata, objective, engineering context, scope, exact interactive flow, expected and observed results, evidence, failure/recovery behavior, security review and source references.
 
 ## Environment
 
 - IBM z/OS 1.11 ADCD
 - TSO/E
-- ISPF 6.1 (observed in the labs)
+- ISPF 6.1
 - 3270/TN3270 interactive access
 
 ## Repository-owned Edit fixtures
@@ -50,23 +51,24 @@ Current fixtures include:
 EDIT08
 EDIT09
 EDIT10
+EDIT11
 ```
 
 ## Architecture V2 progression
 
 ```text
-TSO/E logon
+TSO/E
   -> ISPF navigation
-  -> dataset/member work
-  -> Browse navigation / representation / search
+  -> Browse
   -> controlled Edit lifecycle
   -> INSERT / DELETE
   -> Repeat / Copy / Move / Before / After
-  -> MASK / OVERLAY
+  -> MASK / OVERLAY / COLS
+  -> BNDS / column and data shifting
   -> advanced Edit / utilities
   -> REXX / ISPF automation prerequisites
 ```
 
 ## Publication security
 
-Evidence is reviewed before publication. Credentials, IP addresses, MAC addresses, terminal/network identifiers and host-side network details are not intentionally published.
+Evidence is reviewed before publication. Credentials, private network information, tokens, keys and host-side network identifiers are not intentionally published.

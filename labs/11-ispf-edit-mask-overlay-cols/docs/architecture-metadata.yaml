@@ -1,0 +1,55 @@
+lab:
+  historical_id: "labs/11-ispf-edit-mask-overlay-cols"
+  title: "ISPF Edit MASK and OVERLAY: Templated Input, Controlled Data Merge and Column Indicators"
+  status: "VALIDATED"
+
+architecture:
+  domain: "Operations and Service Management"
+  capability: "Controlled ISPF Edit templated insertion, overlay merge and column-position inspection"
+  lifecycle:
+    - Baseline
+    - Configure
+    - Operate
+    - Observe
+    - Diagnose
+    - Recover
+  maturity: "M3 — Resilient"
+  integration_level: "I0 — Standalone"
+
+dependencies:
+  - "D1: Lab 10 — Repeat / Copy / Move / Before / After"
+  - "D4: IBMUSER.ISPF.LAB available"
+
+evidence:
+  - screenshots
+  - baseline-fixture
+  - mask-profile-baseline
+  - mask-template-validation
+  - overlay-validation
+  - block-overlay-validation
+  - protected-move-overlay
+  - command-conflict-observation
+  - column-indicator-validation
+  - rollback-validation
+  - post-recovery-validation
+  - publication-security-review
+
+result:
+  execution: "SUCCESS"
+  validation: "VALIDATED"
+  mask: "PASS"
+  mask_profile_restore: "PASS"
+  copy_overlay: "PASS"
+  block_overlay: "PASS"
+  move_overlay_protection: "PASS"
+  line_not_deleted: "VALIDATED"
+  column_indicators: "PASS"
+  rollback: "VALIDATED"
+  post_recovery_validation: "PASS"
+  final_persistent_record_count: 12
+  persistent_final_state: "BASELINE RESTORED"
+  security: "APPROVED"
+  batch_rc: "NOT APPLICABLE"
+
+next_capability:
+  - "ISPF Edit BNDS and column/data shifting"
