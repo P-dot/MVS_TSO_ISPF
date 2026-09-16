@@ -16,58 +16,48 @@ Lab 06  Browse representation / HEX / recursive Browse
 Lab 07  Browse FIND / RFIND
 Lab 08  controlled Edit / SAVE / CANCEL / restore
 Lab 09  INSERT / DELETE line commands
-Lab 10  Repeat / Copy / Move / Before / After
+Lab 10  Repeat / Copy / Move / A / B
+Lab 11  MASK / OVERLAY / COLS
 ```
 
 ## Controlled Edit capability path
 
 ```text
-Lab 08
-persistent state control
-SAVE / CANCEL / restore
-        |
-        v
-Lab 09
-record mutation semantics
-I / I3 / D / D3 / DD
-        |
-        v
-Lab 10
-record replication and relocation
-R / C / M / A / B
-        |
-        v
-Lab 11
-MASK / OVERLAY
+Lab 08  persistent-state control
+Lab 09  record insertion/deletion
+Lab 10  replication and relocation
+Lab 11  templated input, merge and column positioning
+Lab 12  BNDS and shifting
 ```
 
-Lab 10 uses `IBMUSER.ISPF.LAB(EDIT10)` with a canonical baseline under:
+Lab 11 uses:
 
 ```text
-fixtures/edit/EDIT10-baseline.txt
+IBMUSER.ISPF.LAB(EDIT11)
 ```
 
-The lab validates working-state transformations, cardinality rules, destination placement, pending source/destination state, a real command-conflict negative test, and rollback to the 28-record persistent baseline.
+with canonical baseline:
+
+```text
+fixtures/edit/EDIT11-baseline.txt
+```
+
+The lab validates both dataset working-state behavior and Edit Profile mask state, then restores both.
 
 ## Cross-repository boundary
 
 State-changing Edit labs operate only on `IBMUSER.ISPF.LAB`.
 
-A future:
-
-```text
-ISPF Edit -> JCL -> SUBMIT -> JES2 -> SDSF
-```
-
-will be treated as explicit cross-repository integration.
+Future `ISPF Edit -> JCL -> SUBMIT -> JES2 -> SDSF` work remains an explicit integration scenario.
 
 ## Near-term roadmap
 
 ```text
 Controlled Edit lifecycle        VALIDATED
-INSERT / DELETE line commands    VALIDATED
+INSERT / DELETE                   VALIDATED
 Repeat / Copy / Move / A / B     VALIDATED
-MASK / OVERLAY                    NEXT
+MASK / OVERLAY / COLS             VALIDATED
+BNDS / shifting                   NEXT
 advanced Edit / utilities         PLANNED
 REXX / ISPF automation            PLANNED
 ```

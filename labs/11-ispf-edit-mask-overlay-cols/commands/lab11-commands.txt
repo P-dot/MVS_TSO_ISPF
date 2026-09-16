@@ -1,0 +1,97 @@
+Lab 11 — ISPF Edit MASK, OVERLAY and COLS
+
+Target:
+IBMUSER.ISPF.LAB(EDIT11)
+
+Baseline:
+12 records
+
+MASK
+----
+MASK line command on MASK-ANCHOR
+Initial profile MASK observed blank
+
+Configured mask template:
+ID=        |STATUS=        |OWNER=
+
+I3 generated three templated input lines
+Only two lines were populated
+Unused masked insert line disappeared
+
+MASK display hidden with D
+Subsequent I still inherited mask template
+
+MASK redisplayed
+Stored template remained active
+
+MASK profile restored to blank
+CANCEL discarded inserted data
+Independent Browse restored 12-record baseline
+
+OVERLAY — COPY
+--------------
+Temporary source:
+OVL-COPY-SOURCE-ADD
+
+C on source
+O on target
+
+Observed target:
+OVL-COPY-TARGET-ADD
+
+Source preserved
+Record count unchanged
+
+CANCEL
+12-record baseline restored
+
+OVERLAY — BLOCK
+---------------
+Temporary sources:
+OVL-BLOCK-SOURCE-A-X
+OVL-BLOCK-SOURCE-B-Y
+
+CC / CC source block
+OO / OO target block
+
+A transient Command conflict was observed during setup.
+Execution was corrected and completed.
+
+Observed:
+OVL-BLOCK-TARGET-A-X
+OVL-BLOCK-TARGET-B-Y
+
+Source block preserved
+Target order preserved
+Record count unchanged
+
+OVERLAY — MOVE PROTECTION
+-------------------------
+M on OVL-MOVE-SOURCE
+O on OVL-MOVE-TARGET
+
+Observed:
+Line not deleted
+
+Source remained present because not all source data could be overlaid on target.
+
+CANCEL
+12-record baseline restored
+
+COLS
+----
+COLS entered as Edit line command
+
+First =COLS> indicator displayed
+Second COLS command displayed another indicator
+Two =COLS> lines coexisted
+
+D used on one =COLS> line
+Only one indicator was removed
+Real data remained unchanged
+
+CANCEL
+Independent Browse verified canonical 12-record baseline
+
+Final persistent state:
+BASELINE RESTORED
