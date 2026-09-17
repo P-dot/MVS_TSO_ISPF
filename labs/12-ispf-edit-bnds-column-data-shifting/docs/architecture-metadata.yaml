@@ -1,0 +1,44 @@
+lab:
+  historical_id: "labs/12-ispf-edit-bnds-column-data-shifting"
+  title: "ISPF Edit BNDS, Column Shifting and Data Shifting"
+  status: "VALIDATED"
+
+architecture:
+  domain: "Operations and Service Management"
+  capability: "Controlled column-bounded ISPF Edit transformation and shifting"
+  lifecycle:
+    - Baseline
+    - Configure
+    - Operate
+    - Observe
+    - Diagnose
+    - Recover
+  maturity: "M3 — Resilient"
+  integration_level: "I0 — Standalone"
+
+dependencies:
+  - "D1: Lab 11 — MASK / OVERLAY / COLS"
+  - "D4: IBMUSER.ISPF.LAB available"
+
+result:
+  execution: "SUCCESS"
+  validation: "VALIDATED"
+  bnds: "PASS"
+  safe_column_shifting: "PASS"
+  destructive_column_shift: "VALIDATED"
+  controlled_data_loss: "OBSERVED"
+  cancel_recovery: "PASS"
+  data_shift_protection: "PASS"
+  data_shifting_incomplete: "VALIDATED"
+  err_marker: "VALIDATED"
+  reset_recovery: "PASS"
+  block_data_shift: "PASS"
+  bnds_profile_restore: "PASS"
+  post_recovery_validation: "PASS"
+  final_persistent_record_count: 11
+  persistent_final_state: "BASELINE RESTORED"
+  security: "APPROVED"
+  batch_rc: "NOT APPLICABLE"
+
+next_capability:
+  - "ISPF Edit EXCLUDE, Edit Labels and TABS"

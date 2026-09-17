@@ -2,7 +2,7 @@
 
 Hands-on TSO/E and ISPF laboratories executed on an IBM z/OS 1.11 ADCD environment.
 
-The lab sequence is documentation-led. The main historical/didactic source is Kurt Bosler's *MVS TSO/ISPF: A Guide for Users and Developers*, complemented by Franz Lanz's *IBM z/OS ISPF Smart Practices* and IBM z/OS documentation.
+The sequence is documentation-led. Kurt Bosler's *MVS TSO/ISPF: A Guide for Users and Developers* is the main historical/didactic source, complemented by Franz Lanz and IBM documentation.
 
 ## Labs
 
@@ -19,39 +19,30 @@ The lab sequence is documentation-led. The main historical/didactic source is Ku
 | [09](labs/09-ispf-edit-insert-delete-line-commands/) | ISPF Edit line commands: controlled INSERT and DELETE | ✅ Completed |
 | [10](labs/10-ispf-edit-repeat-copy-move-before-after/) | ISPF Edit Repeat, Copy, Move, Before/After and multiple-command handling | ✅ Completed |
 | [11](labs/11-ispf-edit-mask-overlay-cols/) | ISPF Edit MASK, OVERLAY and column indicators | ✅ Completed |
-
-## Method
-
-Each lab records Architecture V2 metadata, objective, engineering context, scope, exact interactive flow, expected and observed results, evidence, failure/recovery behavior, security review and source references.
-
-## Environment
-
-- IBM z/OS 1.11 ADCD
-- TSO/E
-- ISPF 6.1
-- 3270/TN3270 interactive access
+| [12](labs/12-ispf-edit-bnds-column-data-shifting/) | ISPF Edit BNDS, column shifting and data shifting | ✅ Completed |
 
 ## Repository-owned Edit fixtures
 
-State-changing ISPF labs use repository-owned fixtures under:
+State-changing ISPF labs use:
 
 ```text
 IBMUSER.ISPF.LAB
 ```
 
-Canonical baselines are preserved under:
+Canonical fixtures are preserved under:
 
 ```text
 fixtures/edit/
 ```
 
-Current fixtures include:
+Current sequence:
 
 ```text
 EDIT08
 EDIT09
 EDIT10
 EDIT11
+EDIT12
 ```
 
 ## Architecture V2 progression
@@ -62,10 +53,11 @@ TSO/E
   -> Browse
   -> controlled Edit lifecycle
   -> INSERT / DELETE
-  -> Repeat / Copy / Move / Before / After
+  -> Repeat / Copy / Move / A / B
   -> MASK / OVERLAY / COLS
-  -> BNDS / column and data shifting
-  -> advanced Edit / utilities
+  -> BNDS / column shifting / data shifting
+  -> EXCLUDE / Edit labels / TABS
+  -> Edit primary commands
   -> REXX / ISPF automation prerequisites
 ```
 
