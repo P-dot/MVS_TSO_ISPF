@@ -1,9 +1,5 @@
 # MVS TSO/ISPF Ecosystem Integration
 
-## Role
-
-This repository provides the interactive entry point into the wider z/OS Engineering Laboratory.
-
 ## Validated capability progression
 
 ```text
@@ -15,52 +11,52 @@ Lab 05  Browse navigation
 Lab 06  Browse representation / HEX / recursive Browse
 Lab 07  Browse FIND / RFIND
 Lab 08  controlled Edit / SAVE / CANCEL / restore
-Lab 09  INSERT / DELETE line commands
+Lab 09  INSERT / DELETE
 Lab 10  Repeat / Copy / Move / A / B
 Lab 11  MASK / OVERLAY / COLS
+Lab 12  BNDS / column shifting / data shifting
 ```
 
 ## Controlled Edit capability path
 
 ```text
 Lab 08  persistent-state control
-Lab 09  record insertion/deletion
+Lab 09  record mutation
 Lab 10  replication and relocation
-Lab 11  templated input, merge and column positioning
-Lab 12  BNDS and shifting
+Lab 11  templated input, overlay and column indicators
+Lab 12  bounded positional transformation and shifting
+Lab 13  EXCLUDE / labels / TABS
 ```
 
-Lab 11 uses:
+Lab 12 uses:
 
 ```text
-IBMUSER.ISPF.LAB(EDIT11)
+IBMUSER.ISPF.LAB(EDIT12)
 ```
 
 with canonical baseline:
 
 ```text
-fixtures/edit/EDIT11-baseline.txt
+fixtures/edit/EDIT12-baseline.txt
 ```
 
-The lab validates both dataset working-state behavior and Edit Profile mask state, then restores both.
+The lab validates both dataset working-state behavior and BNDS/Edit Profile state, including destructive and protective shift behavior.
+
+## Near-term roadmap
+
+```text
+MASK / OVERLAY / COLS             VALIDATED
+BNDS / shifting                   VALIDATED
+EXCLUDE / Edit labels / TABS      NEXT
+Edit primary commands             PLANNED
+REXX / ISPF automation            PLANNED
+```
 
 ## Cross-repository boundary
 
 State-changing Edit labs operate only on `IBMUSER.ISPF.LAB`.
 
-Future `ISPF Edit -> JCL -> SUBMIT -> JES2 -> SDSF` work remains an explicit integration scenario.
-
-## Near-term roadmap
-
-```text
-Controlled Edit lifecycle        VALIDATED
-INSERT / DELETE                   VALIDATED
-Repeat / Copy / Move / A / B     VALIDATED
-MASK / OVERLAY / COLS             VALIDATED
-BNDS / shifting                   NEXT
-advanced Edit / utilities         PLANNED
-REXX / ISPF automation            PLANNED
-```
+Future `ISPF Edit -> JCL -> SUBMIT -> JES2 -> SDSF` work remains an explicit cross-repository integration scenario.
 
 ## Master Architecture
 

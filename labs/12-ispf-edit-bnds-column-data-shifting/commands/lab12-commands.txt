@@ -1,0 +1,89 @@
+Lab 12 — ISPF Edit BNDS, Column Shifting and Data Shifting
+
+Target:
+IBMUSER.ISPF.LAB(EDIT12)
+
+Canonical baseline:
+11 records
+
+COLS / BNDS
+-----------
+COLS displayed column ruler
+BNDS displayed active bounds
+Pre-lab/default left bound observed at beginning of data area
+Controlled restrictive bounds configured around the test data region
+
+SAFE COLUMN SHIFT
+-----------------
+Right column shift with explicit amount:
+)2
+
+Left column shift with default amount:
+(
+
+Observed:
+- shift applied only within bounds
+- data outside bounds remained unchanged
+
+CANCEL
+Persistent baseline restored
+
+DESTRUCTIVE COLUMN SHIFT
+------------------------
+Target:
+LEFT0005|AAA BBB CCC|RIGHT05
+
+Right column shift:
+)2
+
+Observed:
+- source data reached/crossed the configured right bound
+- trailing significant characters were discarded in working state
+- outside-bound LEFT/RIGHT markers remained
+
+CANCEL
+Canonical line restored
+
+PROTECTED DATA SHIFT
+--------------------
+Target:
+LEFT0006|  JJJ KKK  |RIGHT06
+
+Command:
+<99
+
+Observed:
+Data shifting incomplete
+==ERR>
+
+The editor shifted the significant data only as far as possible without discarding it.
+
+RESET
+Observed error marker cleared
+
+BLOCK DATA SHIFT
+----------------
+Targets:
+LEFT0007|  LLL MMM  |RIGHT07
+LEFT0008|  NNN OOO  |RIGHT08
+
+Block command:
+>>2
+>>2
+
+Observed:
+- both records shifted right
+- data order preserved
+- outside-bound prefixes/suffixes preserved
+
+BNDS RESTORATION
+----------------
+Restrictive bounds removed
+Original/default BNDS state restored
+
+CANCEL
+Final independent BROWSE
+
+Observed:
+11 canonical records
+BASELINE RESTORED
