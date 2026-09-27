@@ -20,10 +20,11 @@ The sequence is documentation-led. Kurt Bosler's *MVS TSO/ISPF: A Guide for User
 | [10](labs/10-ispf-edit-repeat-copy-move-before-after/) | ISPF Edit Repeat, Copy, Move, Before/After and multiple-command handling | ✅ Completed |
 | [11](labs/11-ispf-edit-mask-overlay-cols/) | ISPF Edit MASK, OVERLAY and column indicators | ✅ Completed |
 | [12](labs/12-ispf-edit-bnds-column-data-shifting/) | ISPF Edit BNDS, column shifting and data shifting | ✅ Completed |
+| [13](labs/13-ispf-edit-exclude-labels-tabs/) | ISPF Edit EXCLUDE, labels and TABS display state | ✅ Completed |
 
 ## Repository-owned Edit fixtures
 
-State-changing ISPF labs use:
+State-changing and state-observation ISPF labs use:
 
 ```text
 IBMUSER.ISPF.LAB
@@ -43,6 +44,7 @@ EDIT09
 EDIT10
 EDIT11
 EDIT12
+EDIT13
 ```
 
 ## Architecture V2 progression
@@ -56,10 +58,14 @@ TSO/E
   -> Repeat / Copy / Move / A / B
   -> MASK / OVERLAY / COLS
   -> BNDS / column shifting / data shifting
-  -> EXCLUDE / Edit labels / TABS
+  -> EXCLUDE / labels / TABS display state
   -> Edit primary commands
   -> REXX / ISPF automation prerequisites
 ```
+
+## Engineering rule
+
+The repository validates TSO/E and ISPF capabilities. Cross-domain workflows are integrated later through Architecture V2 Production Tracks rather than duplicated inside this repository.
 
 ## Publication security
 

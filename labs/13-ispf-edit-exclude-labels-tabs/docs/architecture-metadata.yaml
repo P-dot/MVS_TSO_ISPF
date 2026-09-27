@@ -1,0 +1,51 @@
+lab:
+  historical_id: "labs/13-ispf-edit-exclude-labels-tabs"
+  title: "ISPF Edit EXCLUDE, Labels and TABS Display State"
+  status: "VALIDATED"
+
+architecture:
+  domain: "Operations and Service Management"
+  capability: "Selective ISPF Edit visibility, session-scoped positioning and special-line state inspection"
+  lifecycle:
+    - Baseline
+    - Operate
+    - Observe
+  maturity: "M2 — Operational"
+  integration_level: "I0 — Standalone"
+
+dependencies:
+  - "D1: Lab 12 — BNDS / column shifting / data shifting"
+  - "D4: IBMUSER.ISPF.LAB available"
+
+state_domains:
+  - "Persistent dataset state"
+  - "Display exclusion state"
+  - "Session label and positioning state"
+  - "Special-line display state"
+
+result:
+  execution: "SUCCESS"
+  validation: "VALIDATED"
+  baseline_record_count: 18
+  exclude_x: "PASS"
+  exclude_x3: "PASS"
+  redisplay_first_f: "PASS"
+  redisplay_last_l: "PASS"
+  block_exclude_xx: "PASS"
+  show_s2: "PASS"
+  indentation_semantics: "OBSERVED"
+  custom_labels: "PASS"
+  locate_custom_label: "PASS"
+  zlast: "PASS"
+  zfirst: "PASS"
+  reset_label: "PASS"
+  tabs_special_line: "PASS"
+  reset_special: "PASS"
+  post_validation_browse: "PASS"
+  final_persistent_record_count: 18
+  persistent_final_state: "BASELINE UNCHANGED"
+  security: "APPROVED"
+
+next_capability:
+  - "Bosler Chapter 16 — Edit Primary Commands"
+  - "HEX / FIND / LOCATE / RESET / SUBMIT"

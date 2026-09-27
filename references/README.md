@@ -11,33 +11,22 @@
 - IBM Redbooks, *Introduction to the New Mainframe: z/OS Basics*, SG24-6366-00.
 - IBM Redbooks, *z/OS Version 1 Release 11 Implementation*, SG24-7729-00.
 
-## Lab 12 source mapping
+## Lab 13 source mapping
 
-Lab 12 follows Bosler Chapter 14, *Advanced Edit Line Commands: Section 2*:
+Lab 13 follows Bosler Chapter 15, *Advanced Edit Line Commands: Section 3*:
 
-- `BNDS` line command;
-- Column Shifting;
-- Data Shifting.
+- The Exclude Command
+- Edit Labels
+- The TABS Line Command
 
-The lab validates:
+The lab validates only the Chapter 15 TABS display behavior. It does not pre-empt the later advanced tab-configuration material.
 
-- current/default bounds observation;
-- controlled restrictive bounds;
-- safe left/right column shifts;
-- destructive column shifting at a right boundary;
-- rollback after destructive working-state modification;
-- data shifting with an intentionally excessive shift request;
-- `Data shifting incomplete`;
-- `==ERR>` handling;
-- `RESET`;
-- block data shifting;
-- restoration of the original/default bounds;
-- independent final Browse verification.
+The next Bosler chapter is Chapter 16, *Edit Primary Commands*:
 
-Lab 12 deliberately stops before Bosler Chapter 15:
-
-- EXCLUDE line command;
-- Edit Labels;
-- TABS line command.
+- HEX
+- FIND
+- LOCATE
+- RESET
+- SUBMIT
 
 The source publications themselves are **not redistributed in this repository**.

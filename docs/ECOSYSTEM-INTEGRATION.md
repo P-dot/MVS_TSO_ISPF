@@ -1,5 +1,21 @@
 # MVS TSO/ISPF Ecosystem Integration
 
+## Repository ownership
+
+`MVS_TSO_ISPF` owns interactive TSO/E and ISPF capability validation:
+
+```text
+TSO/E interaction
+ISPF navigation
+Browse
+Edit
+member-list productivity
+interactive session state
+future ISPF service prerequisites
+```
+
+It does not duplicate the curricula owned by JCL, JES2, REXX, diagnostics, security, scheduler or application repositories.
+
 ## Validated capability progression
 
 ```text
@@ -15,6 +31,7 @@ Lab 09  INSERT / DELETE
 Lab 10  Repeat / Copy / Move / A / B
 Lab 11  MASK / OVERLAY / COLS
 Lab 12  BNDS / column shifting / data shifting
+Lab 13  EXCLUDE / labels / TABS display state
 ```
 
 ## Controlled Edit capability path
@@ -23,40 +40,79 @@ Lab 12  BNDS / column shifting / data shifting
 Lab 08  persistent-state control
 Lab 09  record mutation
 Lab 10  replication and relocation
-Lab 11  templated input, overlay and column indicators
-Lab 12  bounded positional transformation and shifting
-Lab 13  EXCLUDE / labels / TABS
+Lab 11  templated input / overlay / column inspection
+Lab 12  bounded positional transformation
+Lab 13  selective visibility / session labels / special-line state
 ```
 
-Lab 12 uses:
+Lab 13 uses:
 
 ```text
-IBMUSER.ISPF.LAB(EDIT12)
+IBMUSER.ISPF.LAB(EDIT13)
 ```
 
 with canonical baseline:
 
 ```text
-fixtures/edit/EDIT12-baseline.txt
+fixtures/edit/EDIT13-baseline.txt
 ```
 
-The lab validates both dataset working-state behavior and BNDS/Edit Profile state, including destructive and protective shift behavior.
+The lab keeps three state domains separate:
+
+```text
+persistent dataset data
+display state (excluded/visible)
+session labels / position
+special-line display state
+```
+
+## Architecture V2 relationship
+
+Primary engineering domain:
+
+```text
+Operations and Service Management
+```
+
+Current integration level:
+
+```text
+I0 — Standalone
+```
+
+Downstream Architecture V2 relationship:
+
+```text
+MVS / TSO / ISPF
+      |
+      v
+REXX
+      |
+      v
+Production Track 08 — Operations Automation
+```
+
+This repository validates the interactive capability. The production track later proves cross-repository automation and operational integration.
 
 ## Near-term roadmap
 
 ```text
 MASK / OVERLAY / COLS             VALIDATED
 BNDS / shifting                   VALIDATED
-EXCLUDE / Edit labels / TABS      NEXT
-Edit primary commands             PLANNED
+EXCLUDE / labels / TABS           VALIDATED
+Edit primary commands             NEXT
 REXX / ISPF automation            PLANNED
 ```
 
 ## Cross-repository boundary
 
-State-changing Edit labs operate only on `IBMUSER.ISPF.LAB`.
+Future workflows such as:
 
-Future `ISPF Edit -> JCL -> SUBMIT -> JES2 -> SDSF` work remains an explicit cross-repository integration scenario.
+```text
+ISPF -> JCL -> SUBMIT -> JES2 -> SDSF
+```
+
+are cross-repository integration scenarios. They should reference validated domain capabilities rather than duplicate complete JCL/JES2 labs here.
 
 ## Master Architecture
 
