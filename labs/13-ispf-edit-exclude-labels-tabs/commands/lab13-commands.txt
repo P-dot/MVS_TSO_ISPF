@@ -1,0 +1,146 @@
+Lab 13 — ISPF Edit EXCLUDE, Labels and TABS Display State
+
+Target:
+IBMUSER.ISPF.LAB(EDIT13)
+
+Canonical baseline:
+18 records
+
+A. SINGLE EXCLUDE
+-----------------
+Line command:
+X
+
+Target:
+EXCL-A
+
+Observed:
+1 Line(s) not Displayed
+
+Primary command:
+RESET
+
+Observed:
+full display restored
+
+B. NUMERIC EXCLUDE
+------------------
+Line command:
+X3
+
+Target:
+EXCL-A
+
+Observed hidden:
+EXCL-A
+EXCL-B
+EXCL-C
+
+Observed:
+3 Line(s) not Displayed
+
+On excluded-block special line:
+F
+
+Observed:
+first excluded record redisplayed
+2 Line(s) not Displayed
+
+On remaining excluded-block special line:
+L
+
+Observed:
+last excluded record redisplayed
+1 Line(s) not Displayed
+
+Primary command:
+RESET
+
+Observed:
+full display restored
+
+C. BLOCK EXCLUDE + SHOW
+-----------------------
+Line commands:
+XX  on ROOT
+XX  on GRANDCHILD-B
+
+Observed:
+5 Line(s) not Displayed
+
+On excluded-block special line:
+S2
+
+Observed redisplayed:
+ROOT
+  CHILD-A
+
+Observed remaining:
+3 Line(s) not Displayed
+
+This validates indentation-aware SHOW behavior in the tested environment.
+
+Primary command:
+RESET
+
+Observed:
+full display restored
+
+D. EDIT LABELS
+--------------
+User labels:
+.START  LABEL-START
+.MID    LABEL-MIDDLE
+.END    LABEL-END
+
+Primary command:
+L .MID
+
+Observed:
+positioning to LABEL-MIDDLE
+
+Primary command:
+L .ZLAST
+
+Observed:
+positioning to ISPF-LAB13-END
+
+Primary command:
+L .ZFIRST
+
+Observed:
+positioning to ISPF-LAB13-BASELINE
+
+Primary command:
+RESET LABEL
+
+Observed:
+custom labels removed and numeric line identifiers restored
+
+E. TABS DISPLAY STATE
+---------------------
+Line command:
+TABS
+
+Target:
+TABS-ANCHOR
+
+Observed:
+=TABS> special line displayed
+
+No advanced tab configuration was modified.
+
+Primary command:
+RESET SPECIAL
+
+Observed:
+=TABS> special line removed
+
+FINAL VALIDATION
+----------------
+CANCEL
+B EDIT13
+
+Observed:
+18 canonical records
+BASELINE UNCHANGED
