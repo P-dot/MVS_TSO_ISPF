@@ -1,0 +1,124 @@
+Lab 14 — ISPF Edit Primary Commands
+
+Target:
+IBMUSER.ISPF.LAB(EDIT14)
+
+Canonical baseline:
+18 records
+
+HEX
+---
+HEX ON
+HEX ON DATA
+HEX OFF
+
+Observed:
+- vertical hexadecimal representation
+- DATA-format hexadecimal representation
+- normal display restored
+
+FIND + EXCLUDE
+--------------
+XX FILTER-01
+XX FILTER-06
+
+F ALL COUNT X
+
+Observed redisplayed:
+FILTER-01 COUNT ALPHA
+FILTER-03 COUNT DO BETA
+FILTER-05 COUNT DELTA
+
+F DO NX
+
+Observed:
+FILTER-03 COUNT DO BETA found
+FILTER-04 DO GAMMA remained excluded
+
+RESET EXCLUDED
+
+Observed:
+full FILTER block restored
+
+FIND + BNDS
+-----------
+COLS
+BNDS
+
+Restrictive bounds:
+left = 11
+right = 16
+
+F TARGET
+
+Observed:
+TARGET in BOUNDS-IN|TARGET|RIGHT found
+TARGET-OUTSIDE-LEFT ignored because occurrence was outside current bounds
+
+LOCATE
+------
+L 15
+L .ZLAST
+L .ZFIRST
+
+Observed:
+line 15 positioned
+last built-in label positioned
+first built-in label positioned
+
+SELECTIVE RESET
+---------------
+Special state:
+=COLS>
+=BNDS>
+
+Excluded state:
+RESET-EXCLUDE-A
+RESET-EXCLUDE-B
+
+Pending command state:
+CC on RESET-COMMAND-A
+
+Observed diagnostic:
+Block command incomplete
+
+L COMMAND
+RESET COMMAND
+
+Observed:
+pending CC removed
+special and excluded states preserved
+
+L SPECIAL
+RESET SPECIAL
+
+Observed:
+special lines removed
+excluded state preserved
+
+L EXCLUDED
+RESET EXCLUDED
+
+Observed:
+excluded lines redisplayed
+
+BNDS RESTORATION
+----------------
+BNDS
+left bound restored to column 1
+restricted right bound removed
+default right boundary restored
+
+RESET SPECIAL
+CANCEL
+B EDIT14
+
+FINAL
+-----
+18 canonical records
+BASELINE UNCHANGED
+
+SUBMIT
+------
+Not executed in this standalone lab.
+Deferred to cross-repository ISPF -> JCL -> JES2 integration.

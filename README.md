@@ -2,29 +2,17 @@
 
 Hands-on TSO/E and ISPF laboratories executed on an IBM z/OS 1.11 ADCD environment.
 
-The sequence is documentation-led. Kurt Bosler's *MVS TSO/ISPF: A Guide for Users and Developers* is the main historical/didactic source, complemented by Franz Lanz and IBM documentation.
+The sequence is documentation-led and Architecture V2 governed.
 
 ## Labs
 
+Labs 01–13 remain previously validated.
+
 | Lab | Topic | Status |
 |---|---|---|
-| [01](labs/01-tso-e-logon-ready-ispf-environment/) | TSO/E logon, native READY mode and ISPF environment | ✅ Completed |
-| [02](labs/02-ispf-navigation-hierarchy-direct-options-return/) | ISPF hierarchy, direct option entry, jump function and RETURN | ✅ Completed |
-| [03](labs/03-ispf-split-screen-swap-logical-screens/) | ISPF logical screens, SPLIT, SWAP and task-list validation | ✅ Completed |
-| [04](labs/04-ispf-dataset-names-member-lists/) | Data set naming, DSLIST and member-list processing | ✅ Completed |
-| [05](labs/05-ispf-browse-navigation-scrolling-locate-labels/) | ISPF Browse navigation, scrolling, LOCATE and labels | ✅ Completed |
-| [06](labs/06-ispf-browse-display-hex-recursive/) | ISPF Browse display controls, hexadecimal representation and recursive Browse | ✅ Completed |
-| [07](labs/07-ispf-browse-find-rfind-search-controls/) | ISPF Browse FIND, RFIND and search controls | ✅ Completed |
-| [08](labs/08-ispf-edit-controlled-save-cancel-restore/) | Controlled ISPF Edit lifecycle: SAVE, CANCEL, persistence and restore | ✅ Completed |
-| [09](labs/09-ispf-edit-insert-delete-line-commands/) | ISPF Edit line commands: controlled INSERT and DELETE | ✅ Completed |
-| [10](labs/10-ispf-edit-repeat-copy-move-before-after/) | ISPF Edit Repeat, Copy, Move, Before/After and multiple-command handling | ✅ Completed |
-| [11](labs/11-ispf-edit-mask-overlay-cols/) | ISPF Edit MASK, OVERLAY and column indicators | ✅ Completed |
-| [12](labs/12-ispf-edit-bnds-column-data-shifting/) | ISPF Edit BNDS, column shifting and data shifting | ✅ Completed |
-| [13](labs/13-ispf-edit-exclude-labels-tabs/) | ISPF Edit EXCLUDE, labels and TABS display state | ✅ Completed |
+| [14](labs/14-ispf-edit-primary-commands/) | ISPF Edit primary commands: HEX, FIND, LOCATE and RESET | ✅ Completed |
 
 ## Repository-owned Edit fixtures
-
-State-changing and state-observation ISPF labs use:
 
 ```text
 IBMUSER.ISPF.LAB
@@ -36,7 +24,7 @@ Canonical fixtures are preserved under:
 fixtures/edit/
 ```
 
-Current sequence:
+Current sequence includes:
 
 ```text
 EDIT08
@@ -45,6 +33,7 @@ EDIT10
 EDIT11
 EDIT12
 EDIT13
+EDIT14
 ```
 
 ## Architecture V2 progression
@@ -60,13 +49,19 @@ TSO/E
   -> BNDS / column shifting / data shifting
   -> EXCLUDE / labels / TABS display state
   -> Edit primary commands
-  -> REXX / ISPF automation prerequisites
+  -> Advanced Edit primary commands
 ```
 
-## Engineering rule
+## Engineering boundary
 
-The repository validates TSO/E and ISPF capabilities. Cross-domain workflows are integrated later through Architecture V2 Production Tracks rather than duplicated inside this repository.
+`SUBMIT` is introduced by the source chapter but is intentionally not executed in this standalone repository lab.
+
+Its execution belongs to a later cross-repository path:
+
+```text
+ISPF -> JCL -> JES2
+```
 
 ## Publication security
 
-Evidence is reviewed before publication. Credentials, private network information, tokens, keys and host-side network identifiers are not intentionally published.
+Evidence was reviewed before publication. No credentials, private network information, tokens, keys or host-side network identifiers are intentionally published.
