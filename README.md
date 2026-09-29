@@ -11,6 +11,7 @@ Labs 01–13 remain previously validated.
 | Lab | Topic | Status |
 |---|---|---|
 | [14](labs/14-ispf-edit-primary-commands/) | ISPF Edit primary commands: HEX, FIND, LOCATE and RESET | ✅ Completed |
+| [15](labs/15-ispf-edit-advanced-primary-commands/) | ISPF Edit advanced primary commands: EXCLUDE, DELETE, SORT and Recursive Edit | ✅ Completed |
 
 ## Repository-owned Edit fixtures
 
@@ -34,6 +35,8 @@ EDIT11
 EDIT12
 EDIT13
 EDIT14
+EDIT15
+EDIT15R
 ```
 
 ## Architecture V2 progression
@@ -50,17 +53,14 @@ TSO/E
   -> EXCLUDE / labels / TABS display state
   -> Edit primary commands
   -> Advanced Edit primary commands
+  -> CHANGE
 ```
 
 ## Engineering boundary
 
-`SUBMIT` is introduced by the source chapter but is intentionally not executed in this standalone repository lab.
+Capabilities remain owned by this repository while they are interactive TSO/E or ISPF behaviors.
 
-Its execution belongs to a later cross-repository path:
-
-```text
-ISPF -> JCL -> JES2
-```
+Cross-domain execution paths are integrated later through Architecture V2 Production Tracks.
 
 ## Publication security
 

@@ -1,0 +1,50 @@
+lab:
+  historical_id: "labs/15-ispf-edit-advanced-primary-commands"
+  title: "ISPF Edit Advanced Primary Commands: EXCLUDE, DELETE, SORT and Recursive Edit"
+  status: "VALIDATED"
+
+architecture:
+  domain: "Operations and Service Management"
+  capability: "Content-driven selection, scoped mutation, resequencing and nested Edit context"
+  lifecycle:
+    - Baseline
+    - Configure
+    - Operate
+    - Observe
+    - Recover
+  maturity: "M3 — Resilient"
+  integration_level: "I0 — Standalone"
+
+dependencies:
+  - "D1: Lab 14 — Edit primary commands"
+  - "D4: IBMUSER.ISPF.LAB available"
+
+fixtures:
+  primary: "IBMUSER.ISPF.LAB(EDIT15)"
+  recursive: "IBMUSER.ISPF.LAB(EDIT15R)"
+  primary_record_count: 17
+  recursive_record_count: 3
+
+result:
+  execution: "SUCCESS"
+  validation: "VALIDATED"
+  exclude_content: "PASS"
+  exclude_label_range: "PASS"
+  environment_specific_full_exclude_syntax: "EXCLUDE ALL .XA .XB"
+  delete_excluded: "PASS"
+  destructive_working_state: "OBSERVED"
+  delete_cancel_recovery: "PASS"
+  sort_column_range: "PASS"
+  sort_label_range: "PASS"
+  sort_ascending: "PASS"
+  sort_cancel_recovery: "PASS"
+  recursive_edit: "PASS"
+  nested_member_open: "PASS"
+  nested_cancel_return: "PASS"
+  final_primary_record_count: 17
+  final_recursive_record_count: 3
+  persistent_final_state: "BASELINE RESTORED / UNCHANGED"
+  security: "APPROVED"
+
+next_capability:
+  - "Bosler Chapter 18 — CHANGE Command"

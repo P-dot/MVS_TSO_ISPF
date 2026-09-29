@@ -20,13 +20,15 @@ Bosler Chapter 16 — *Edit Primary Commands*:
 - RESET
 - SUBMIT
 
-This lab executes the repository-owned interactive capabilities:
+`SUBMIT` execution remains deferred to cross-repository ISPF -> JCL -> JES2 integration.
 
-```text
-HEX
-FIND
-LOCATE
-RESET
-```
+## Lab 15 source mapping
 
-`SUBMIT` is documented as an integration boundary and deferred to a cross-repository ISPF -> JCL -> JES2 workflow.
+Bosler Chapter 17 — *Advanced Edit Primary Commands*:
+
+- EXCLUDE
+- DELETE
+- SORT
+- Recursive Edit
+
+Lab 15 validates content-driven and range-driven exclusion, destructive DELETE with rollback, scoped SORT with rollback, and nested Edit context/return.

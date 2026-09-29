@@ -10,35 +10,47 @@ Lab 11  MASK / OVERLAY / COLS
 Lab 12  BNDS / column shifting / data shifting
 Lab 13  EXCLUDE / labels / TABS display state
 Lab 14  HEX / FIND / LOCATE / selective RESET
+Lab 15  primary EXCLUDE / DELETE / SORT / Recursive Edit
 ```
 
-## Lab 14 ownership
+## Lab 15 ownership
 
 Repository-owned capability:
 
 ```text
-interactive display
-search scope
-positioning
-session-state reset
+content-driven visibility
+label-range scoping
+destructive working-state deletion
+record resequencing
+nested Edit context
 ```
 
-Cross-repository boundary:
+## State and recovery progression
 
 ```text
-SUBMIT
-  |
-  v
-JCL / JES2
-```
+EXCLUDE
+  -> display-state mutation
 
-Lab 14 does not duplicate JCL or JES2 validation.
+DELETE
+  -> destructive working-data mutation
+  -> CANCEL recovery
+
+SORT
+  -> working-data resequencing
+  -> CANCEL recovery
+
+Recursive Edit
+  -> parent Edit suspended
+  -> child Edit active
+  -> child CANCEL
+  -> parent Edit resumed
+```
 
 ## Near-term roadmap
 
 ```text
 Edit primary commands             VALIDATED
-Advanced Edit primary commands    NEXT
-CHANGE                            PLANNED
+Advanced Edit primary commands    VALIDATED
+CHANGE                            NEXT
 Data storage / recovery           PLANNED
 ```
