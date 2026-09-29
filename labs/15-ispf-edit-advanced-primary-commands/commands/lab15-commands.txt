@@ -1,0 +1,117 @@
+Lab 15 — ISPF Edit Advanced Primary Commands
+
+PRIMARY FIXTURE
+---------------
+IBMUSER.ISPF.LAB(EDIT15)
+17 records
+
+RECURSIVE FIXTURE
+-----------------
+IBMUSER.ISPF.LAB(EDIT15R)
+3 records
+
+A. CONTENT-DRIVEN EXCLUDE
+-------------------------
+X ALL DROP
+
+Observed:
+EXC-DROP-01 ALPHA excluded
+EXC-DROP-02 BETA excluded
+
+RESET EXCLUDED
+
+Observed:
+17-record display restored
+
+B. LABEL-RANGE EXCLUDE
+----------------------
+Labels:
+.XA on LABEL-RANGE-START
+.XB on LABEL-RANGE-END
+
+Attempt:
+EXCLUDE .XA .XB
+
+Observed in this environment:
+Put string in quotes
+
+Validated environment syntax:
+EXCLUDE ALL .XA .XB
+
+Observed:
+4-line range excluded
+
+RESET EXCLUDED
+RESET LABEL
+
+C. DELETE EXCLUDED
+------------------
+X ALL DROP
+
+DEL ALL X
+
+Observed:
+2 lines deleted
+
+Working-state count:
+15 records
+
+No SAVE issued.
+
+CANCEL
+B EDIT15
+
+Observed:
+17 canonical records restored
+
+D. SORT
+-------
+Labels:
+.SA on SORT-03|CHARLIE
+.SB on SORT-02|BRAVO
+
+Command:
+SORT 6 7 A .SA .SB
+
+Before:
+03
+01
+04
+02
+
+After:
+01
+02
+03
+04
+
+No SAVE issued.
+
+CANCEL
+
+Observed:
+canonical order restored:
+03
+01
+04
+02
+
+E. RECURSIVE EDIT
+-----------------
+From EDIT15:
+
+EDIT EDIT15R
+
+Observed active child:
+IBMUSER.ISPF.LAB(EDIT15R)
+
+Records:
+ISPF-LAB15-RECURSIVE
+NESTED-EDIT-SESSION
+RETURN-TO-EDIT15
+
+CANCEL
+
+Observed:
+returned directly to parent session
+IBMUSER.ISPF.LAB(EDIT15)
