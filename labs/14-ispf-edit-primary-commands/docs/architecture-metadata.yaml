@@ -1,0 +1,54 @@
+lab:
+  historical_id: "labs/14-ispf-edit-primary-commands"
+  title: "ISPF Edit Primary Commands: HEX, FIND, LOCATE and RESET"
+  status: "VALIDATED"
+
+architecture:
+  domain: "Operations and Service Management"
+  capability: "Controlled ISPF Edit display, search, positioning and selective session-state reset"
+  lifecycle:
+    - Baseline
+    - Configure
+    - Operate
+    - Observe
+  maturity: "M2 — Operational"
+  integration_level: "I0 — Standalone"
+
+dependencies:
+  - "D1: Lab 13 — EXCLUDE / labels / TABS"
+  - "D4: IBMUSER.ISPF.LAB available"
+
+integration_boundary:
+  submit:
+    source_capability: "ISPF Edit SUBMIT primary command"
+    execution_status: "DEFERRED"
+    downstream_owner: "JCL / JES2 integration"
+    target: "Cross-repository ISPF -> JCL -> JES2 workflow"
+
+result:
+  execution: "SUCCESS"
+  validation: "VALIDATED"
+  baseline_record_count: 18
+  hex_vertical: "PASS"
+  hex_data: "PASS"
+  hex_off: "PASS"
+  find_excluded_x: "PASS"
+  find_nonexcluded_nx: "PASS"
+  find_with_bnds: "PASS"
+  locate_line_number: "PASS"
+  locate_zlast: "PASS"
+  locate_zfirst: "PASS"
+  locate_command_class: "PASS"
+  locate_special_class: "PASS"
+  locate_excluded_class: "PASS"
+  reset_command_selective: "PASS"
+  reset_special_selective: "PASS"
+  reset_excluded_selective: "PASS"
+  bnds_profile_restore: "PASS"
+  post_validation_browse: "PASS"
+  final_persistent_record_count: 18
+  persistent_final_state: "BASELINE UNCHANGED"
+  security: "APPROVED"
+
+next_capability:
+  - "Bosler Chapter 17 — Advanced Edit Primary Commands"

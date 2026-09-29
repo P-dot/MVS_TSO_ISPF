@@ -2,26 +2,17 @@
 
 ## Primary source
 
-- Kurt Bosler, *MVS TSO/ISPF: A Guide for Users and Developers*, McGraw-Hill / J. Ranade IBM Series.
+- Kurt Bosler, *MVS TSO/ISPF: A Guide for Users and Developers*.
 
 ## Complementary sources
 
-- Franz Lanz, *IBM z/OS ISPF Smart Practices, Volume 1: User's Guide*, De Gruyter, 2015.
-- Franz Lanz, *IBM z/OS ISPF Smart Practices, Volume 2: ISPF Programmer's Guide*, De Gruyter, 2015.
-- IBM Redbooks, *Introduction to the New Mainframe: z/OS Basics*, SG24-6366-00.
-- IBM Redbooks, *z/OS Version 1 Release 11 Implementation*, SG24-7729-00.
+- Franz Lanz, *IBM z/OS ISPF Smart Practices, Volume 1: User's Guide*.
+- Franz Lanz, *IBM z/OS ISPF Smart Practices, Volume 2: ISPF Programmer's Guide*.
+- IBM Redbooks, *Introduction to the New Mainframe: z/OS Basics*.
 
-## Lab 13 source mapping
+## Lab 14 source mapping
 
-Lab 13 follows Bosler Chapter 15, *Advanced Edit Line Commands: Section 3*:
-
-- The Exclude Command
-- Edit Labels
-- The TABS Line Command
-
-The lab validates only the Chapter 15 TABS display behavior. It does not pre-empt the later advanced tab-configuration material.
-
-The next Bosler chapter is Chapter 16, *Edit Primary Commands*:
+Bosler Chapter 16 — *Edit Primary Commands*:
 
 - HEX
 - FIND
@@ -29,4 +20,13 @@ The next Bosler chapter is Chapter 16, *Edit Primary Commands*:
 - RESET
 - SUBMIT
 
-The source publications themselves are **not redistributed in this repository**.
+This lab executes the repository-owned interactive capabilities:
+
+```text
+HEX
+FIND
+LOCATE
+RESET
+```
+
+`SUBMIT` is documented as an integration boundary and deferred to a cross-repository ISPF -> JCL -> JES2 workflow.
