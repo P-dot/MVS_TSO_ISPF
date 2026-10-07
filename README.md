@@ -348,3 +348,14 @@ application, data, security and integration tracks
 ```
 
 Return to the [P-dot IBM z/OS engineering portfolio](https://github.com/P-dot).
+
+
+---
+
+## z/OS Engineering Academy
+
+**Academy role:** Foundation School — interactive z/OS operation, data sets, editing and submission.
+
+[Start the Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Course Catalog](https://github.com/P-dot/P-dot/blob/main/docs/COURSES.md) · [Curriculum Graph](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md) · [Cross-Domain Relationships](https://github.com/P-dot/P-dot/blob/main/docs/RELATIONSHIPS.md)
+
+> Learn the concept → execute the lab → interpret the evidence → understand the subsystem boundary → continue to the next connected course.
