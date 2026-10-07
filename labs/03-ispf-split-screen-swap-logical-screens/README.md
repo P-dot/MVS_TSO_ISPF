@@ -186,3 +186,12 @@ See `docs/security-review.md`.
 ## References
 
 See the repository-level `references/README.md`.
+
+
+---
+### Continue learning
+
+**Previous:** [02-ispf-navigation-hierarchy-direct-options-return](../02-ispf-navigation-hierarchy-direct-options-return/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [04-ispf-dataset-names-member-lists](../04-ispf-dataset-names-member-lists/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

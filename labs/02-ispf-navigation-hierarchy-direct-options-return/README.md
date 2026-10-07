@@ -284,3 +284,12 @@ docs/security-review.md
 - Franz Lanz, *IBM z/OS ISPF Smart Practices, Volume 1: User's Guide*, especially the sections covering ISPF panels and the Primary Option Menu.
 - IBM Redbooks, *Introduction to the New Mainframe: z/OS Basics*, SG24-6366-00.
 - IBM Redbooks, *z/OS Version 1 Release 11 Implementation*, SG24-7729-00, used as the release-specific z/OS context for this project.
+
+
+---
+### Continue learning
+
+**Previous:** [01-tso-e-logon-ready-ispf-environment](../01-tso-e-logon-ready-ispf-environment/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [03-ispf-split-screen-swap-logical-screens](../03-ispf-split-screen-swap-logical-screens/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

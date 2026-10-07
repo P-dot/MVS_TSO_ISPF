@@ -217,3 +217,12 @@ These remain future capabilities.
 ## References
 
 See the repository-level `references/README.md`.
+
+
+---
+### Continue learning
+
+**Previous:** [09-ispf-edit-insert-delete-line-commands](../09-ispf-edit-insert-delete-line-commands/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [11-ispf-edit-mask-overlay-cols](../11-ispf-edit-mask-overlay-cols/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

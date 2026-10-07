@@ -192,3 +192,12 @@ Edit Recovery
 ## References
 
 See repository-level `references/README.md`.
+
+
+---
+### Continue learning
+
+**Previous:** [10-ispf-edit-repeat-copy-move-before-after](../10-ispf-edit-repeat-copy-move-before-after/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [12-ispf-edit-bnds-column-data-shifting](../12-ispf-edit-bnds-column-data-shifting/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

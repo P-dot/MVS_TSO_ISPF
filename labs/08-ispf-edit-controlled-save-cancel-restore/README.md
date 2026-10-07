@@ -516,3 +516,12 @@ Copy/move/repeat remain later capabilities.
 ## References
 
 See the repository-level `references/README.md`.
+
+
+---
+### Continue learning
+
+**Previous:** [07-ispf-browse-find-rfind-search-controls](../07-ispf-browse-find-rfind-search-controls/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [09-ispf-edit-insert-delete-line-commands](../09-ispf-edit-insert-delete-line-commands/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

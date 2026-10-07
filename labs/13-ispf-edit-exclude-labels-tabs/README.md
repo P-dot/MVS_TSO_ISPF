@@ -223,3 +223,12 @@ SUBMIT
 ## References
 
 See repository-level `references/README.md`.
+
+
+---
+### Continue learning
+
+**Previous:** [12-ispf-edit-bnds-column-data-shifting](../12-ispf-edit-bnds-column-data-shifting/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [14-ispf-edit-primary-commands](../14-ispf-edit-primary-commands/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

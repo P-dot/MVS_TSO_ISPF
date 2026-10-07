@@ -521,3 +521,12 @@ recursive Browse
 ## References
 
 See the repository-level `references/README.md`.
+
+
+---
+### Continue learning
+
+**Previous:** [04-ispf-dataset-names-member-lists](../04-ispf-dataset-names-member-lists/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [06-ispf-browse-display-hex-recursive](../06-ispf-browse-display-hex-recursive/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

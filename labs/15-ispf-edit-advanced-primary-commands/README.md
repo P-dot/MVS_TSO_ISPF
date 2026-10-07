@@ -206,3 +206,12 @@ M3 is supported by actual destructive and resequencing working-state mutations f
 ## Next capability
 
 **Bosler Chapter 18 — CHANGE Command**
+
+
+---
+### Continue learning
+
+**Previous:** [14-ispf-edit-primary-commands](../14-ispf-edit-primary-commands/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [Choose the next Academy course](https://github.com/P-dot/P-dot/blob/main/docs/COURSES.md)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

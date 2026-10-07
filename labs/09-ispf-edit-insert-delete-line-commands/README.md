@@ -81,3 +81,12 @@ Excluded: `R/Rn/RR`, `C/Cn/CC`, `M/Mn/MM`, `A`, `B`, MASK, OVERLAY, BNDS, EXCLUD
 ## Next capability
 
 **Lab 10 — ISPF Edit Line Commands: Repeat, Copy, Move, Before and After**
+
+
+---
+### Continue learning
+
+**Previous:** [08-ispf-edit-controlled-save-cancel-restore](../08-ispf-edit-controlled-save-cancel-restore/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [10-ispf-edit-repeat-copy-move-before-after](../10-ispf-edit-repeat-copy-move-before-after/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

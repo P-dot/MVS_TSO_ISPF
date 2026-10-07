@@ -523,3 +523,12 @@ That keeps the chapter/capability boundary clean.
 ## References
 
 See the repository-level `references/README.md`.
+
+
+---
+### Continue learning
+
+**Previous:** [05-ispf-browse-navigation-scrolling-locate-labels](../05-ispf-browse-navigation-scrolling-locate-labels/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [07-ispf-browse-find-rfind-search-controls](../07-ispf-browse-find-rfind-search-controls/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

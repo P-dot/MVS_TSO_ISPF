@@ -181,3 +181,12 @@ I0 — Standalone
 ## Next capability
 
 **Bosler Chapter 17 — Advanced Edit Primary Commands**
+
+
+---
+### Continue learning
+
+**Previous:** [13-ispf-edit-exclude-labels-tabs](../13-ispf-edit-exclude-labels-tabs/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [15-ispf-edit-advanced-primary-commands](../15-ispf-edit-advanced-primary-commands/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

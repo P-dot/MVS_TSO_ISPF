@@ -263,3 +263,12 @@ See [`docs/technical-notes.md`](docs/technical-notes.md).
 2. Franz Lanz, *IBM z/OS ISPF Smart Practices, Volume 1: User's Guide*, Chapter 3 **The TSO/ISPF logon process** and Chapter 4 **Customize ISPF**. Lanz explains the logon procedure, ISPF start, the Primary Option Menu and the possible return to `READY` when ISPF ends.
 3. IBM Redbooks, *Introduction to the New Mainframe: z/OS Basics*, Chapter 4 **TSO/E, ISPF, and UNIX: Interactive facilities of z/OS**. Its exercises explicitly use `=X` to leave ISPF for native TSO and `PROFILE` to inspect the prefix.
 4. IBM Redbooks, *z/OS Version 1 Release 11 Implementation*, used as release-level context for the laboratory environment and ISPF/TSO/E behavior on z/OS V1R11.
+
+
+---
+### Continue learning
+
+**Previous:** Course introduction  
+**Course:** [Course home](../../README.md)  
+**Next:** [02-ispf-navigation-hierarchy-direct-options-return](../02-ispf-navigation-hierarchy-direct-options-return/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

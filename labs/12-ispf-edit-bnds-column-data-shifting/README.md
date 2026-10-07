@@ -198,3 +198,12 @@ UNDO / Edit Recovery
 ## References
 
 See repository-level `references/README.md`.
+
+
+---
+### Continue learning
+
+**Previous:** [11-ispf-edit-mask-overlay-cols](../11-ispf-edit-mask-overlay-cols/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [13-ispf-edit-exclude-labels-tabs](../13-ispf-edit-exclude-labels-tabs/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

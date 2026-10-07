@@ -400,3 +400,12 @@ See `docs/security-review.md`.
 ## References
 
 See the repository-level `references/README.md`.
+
+
+---
+### Continue learning
+
+**Previous:** [03-ispf-split-screen-swap-logical-screens](../03-ispf-split-screen-swap-logical-screens/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [05-ispf-browse-navigation-scrolling-locate-labels](../05-ispf-browse-navigation-scrolling-locate-labels/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

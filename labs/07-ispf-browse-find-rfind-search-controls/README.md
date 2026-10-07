@@ -557,3 +557,12 @@ The next capability should focus on the differences between Browse and Edit, saf
 ## References
 
 See the repository-level `references/README.md`.
+
+
+---
+### Continue learning
+
+**Previous:** [06-ispf-browse-display-hex-recursive](../06-ispf-browse-display-hex-recursive/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [08-ispf-edit-controlled-save-cancel-restore](../08-ispf-edit-controlled-save-cancel-restore/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)
